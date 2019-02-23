@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bull Run Market Application</string>
+    <string name="title_activity_truck_selection">TruckSelection</string>
+    <string name="select_truck">Select a Truck…</string>
+    <string name="tacos">Rico\'s Tacos</string>
+    <string name="pizza">Pizza Time</string>
+    <string name="italian">Italian on Wheels</string>
+    <string name="delight">Hyderabadi Delight</string>
+    <string name="freepikIcons">Icon made by Freepik and obtained from www.flaticon.com</string>
+    <string name="title_activity_truck_interface">TruckInterface</string>
+</resources>
