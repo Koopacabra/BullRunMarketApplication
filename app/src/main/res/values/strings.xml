@@ -8,4 +8,7 @@
     <string name="delight">Hyderabadi Delight</string>
     <string name="freepikIcons">Icon made by Freepik and obtained from www.flaticon.com</string>
     <string name="title_activity_truck_interface">TruckInterface</string>
+    <string name="options_signOut">Sign Out</string>
+    <string name="options_about">About</string>
+    <string name="goto_truck_selection">To Truck Selection</string>
 </resources>

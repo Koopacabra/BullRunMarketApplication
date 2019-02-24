@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 
 public class TruckSelection extends AppCompatActivity {
@@ -15,6 +16,13 @@ public class TruckSelection extends AppCompatActivity {
         setContentView(R.layout.activity_truck_selection);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
+
+    //function to create the options/overflow menu for the app bar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_options_button, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
 }
