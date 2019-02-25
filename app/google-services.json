@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "530997095946",
+    "firebase_url": "https://bullrunmarketapplication.firebaseio.com",
+    "project_id": "bullrunmarketapplication",
+    "storage_bucket": "bullrunmarketapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530997095946:android:caf0514fddfda722",
+        "android_client_info": {
+          "package_name": "com.example.bullrunmarketapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530997095946-8v7t01kvuhk87elu4ji7vtf72je49u0n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bullrunmarketapplication",
+            "certificate_hash": "251188dac3cfac6fbfe6175bdf791fea1c077cf7"
+          }
+        },
+        {
+          "client_id": "530997095946-5juoskoaganqnmabvf9c3j3n2ea5coa9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlmDkRahzaMUH9Oiis5nmWOyMgeXcDGZ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530997095946-5juoskoaganqnmabvf9c3j3n2ea5coa9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
