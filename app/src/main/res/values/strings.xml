@@ -13,4 +13,6 @@
     <string name="goto_truck_selection">To Truck Selection</string>
     <string name="title_activity_hyderabadi_layout">hyderabadi_layout</string>
     <string name="title_activity_hyderabadi_delight">hyderabadi_delight</string>
+    <string name="title_activity_pizza_layout">pizza_layout</string>
+    <string name="title_activity_pizzatime">pizzatime</string>
 </resources>
