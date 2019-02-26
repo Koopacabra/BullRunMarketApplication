@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".hyderabadi_delight"
+            android:label="@string/title_activity_hyderabadi_delight"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".hyderabadi_layout"
+            android:label="@string/title_activity_hyderabadi_layout"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".TruckInterface"
             android:label="@string/title_activity_truck_interface"
             android:theme="@style/AppTheme.NoActionBar" />
