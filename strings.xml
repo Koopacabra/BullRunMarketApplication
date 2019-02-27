@@ -1,0 +1,9 @@
+<resources>
+        <string name="app_name">BRM_Driving_Crab</string>
+        <string name="options_signOut">Sign Out</string>
+        <string name="options_about">About</string>
+        <string name="goto_truck_selection">To Truck Selection</string>
+        <string name="title_activity_hyderabadi_layout">italian_on_wheels</string>
+        <string name="title_activity_hyderabadi_delight">italian_on_wheels</string>
+
+</resources>
