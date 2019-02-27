@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bullrunmarketapplication">
 
+    <!--suppressed tools:ignore backup and Google App indexing as we won't need
+   them and they throw warnings without-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/usflogo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/usflogo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
             android:name=".pizzatime"
             android:label="@string/title_activity_pizzatime"
