@@ -9,6 +9,10 @@
     tools:context=".TruckSelection"
     tools:showIn="@layout/activity_truck_selection">
 
+    <include
+        layout="@layout/app_bar"
+        android:id="@+id/appBar" />
+
     <!-- A CardView that contains the truck icons -->
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cardView_delight"

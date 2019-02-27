@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 public class TruckSelection extends AppCompatActivity {
@@ -14,7 +15,7 @@ public class TruckSelection extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truck_selection);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
     }
 
@@ -25,4 +26,10 @@ public class TruckSelection extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    /*//function to determine what happens when an item is selected
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {\
+        switch case etc.
+        return super.onOptionsItemSelected(item);
+    }*/
 }
