@@ -2,6 +2,7 @@ package com.example.bullrunmarketapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -17,14 +18,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class SignIn extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     //Firebase
     FirebaseDatabase database;
     DatabaseReference user;
 
     EditText edtUsername, edtPassword;
-    Button btnSignIn, btnRegister;
+    Button btnSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstances) {
@@ -38,39 +39,39 @@ public class SignIn extends AppCompatActivity {
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
 
-        btnRegister = findViewById(R.id.btnRegister);
         btnSignIn = findViewById(R.id.btnSignIn);
 
         btnSignIn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                Intent s = new Intent(getApplicationContext(), SignIn.class);
-                startActivity(s);
+            public void onClick(View view){
+                signIn(edtUsername.getText().toString(),
+                        edtPassword.getText().toString());
             }
         });
+    }
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+    private void signIn(final String username, final String password) {
+        user.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                final User user = new User(edtUsername.getText().toString(),
-                        edtPassword.getText().toString());
-
-                user.addListenerForSingleValueEvent(new ValueEventListener(){
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.child(user.getUsername()).exists())
-                            Toast.makeText(SignIn.this, "This Username already exists!", Toast.LENGTH_SHORT).show();
-                        else {
-                            user.child(user.getUsername()).setValue(user);
-                            Toast.makeText(SignIn.this, "Registered successfully!", Toast.LENGTH_SHORT).show();
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child(username).exists()){ //user
+                    if(!username.isEmpty()){
+                        User login = dataSnapshot.child(username).getValue(User.class);
+                        if(login.getPassword().equals(password)){
+                            Toast.makeText(LoginActivity.this, "Login success!", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            Toast.makeText(LoginActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
                         }
                     }
+                    else
+                        Toast.makeText(LoginActivity.this, "Username not registered!", Toast.LENGTH_SHORT).show();
+                }
+            }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        //custom code
-                    }
-                });
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                //custom code
             }
         });
     }

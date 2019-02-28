@@ -5,33 +5,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnLogin, btnSignup;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_screen);
+        setContentView(R.layout.activity_main_screen);
 
-        btnLogin = findViewById(R.id.btnLogin);
-        btnSignup = findViewById(R.id.btnSignup);
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        button = findViewById(R.id.btnWelcome);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-            }
-        });
-
-        btnSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
+                openpizzatime();
             }
         });
     }
-}
 
+    public void openpizzatime() {
+        Intent intent = new Intent(this, SignIn.class);
+        startActivity(intent);
+    }
+}
