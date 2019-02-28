@@ -5,16 +5,26 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 tools:context=".TruckSelection">
 
         <item
-            android:id="@+id/overflow_signOut"
-            android:orderInCategory="1"
+            android:id="@+id/options_signOut"
+            android:orderInCategory="2"
             android:title="@string/options_signOut"
             android:icon="@drawable/cancel"
             app:showAsAction="never" />
         <item
-            android:id="@+id/overflow_about"
-            android:orderInCategory="2"
+            android:id="@+id/options_about"
+            android:orderInCategory="3"
             android:title="@string/options_about"
             android:icon="@drawable/help"
             app:showAsAction="never" />
+
+        <!--forcing show as 'always' to stay visible; ignoring 'ifRoom' suggestion-->
+        <item
+            android:id="@+id/options_cart"
+            android:orderInCategory="1"
+            android:title="@string/options_cart"
+            android:icon="@drawable/cart"
+            app:showAsAction="always"
+            android:background="#0000"
+            tools:ignore="AlwaysShowAction" />
 
 </menu>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bull Run Market Application</string>
+    <string name="app_name">Bull Run Market</string>
     <string name="title_activity_truck_selection">TruckSelection</string>
     <string name="select_truck">Select a Truck…</string>
     <string name="tacos">Rico\'s Tacos</string> <!-- I really hope Ben made Ricos tacos and not the other thing. :) -->
@@ -32,6 +32,8 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="options_cart">cart</string>
+
     <!--Landing/Submenu Strings -->
     <string name="pizza_motto">We take pride in making a perfect pizza and providing courteous and helpful service on time all the time. Every customer says, I\'ll be back! We are the employer of choice offering team members opportunities for growth, advancement, and rewarding careers in a fun, safe working environment.</string>
     <string name="pizza_title">We take pride in making a perfect pizza and providing courteous and helpful service on time all the time. Every customer says, I\'ll be back! We are the employer of choice offering team members opportunities for growth, advancement, and rewarding careers in a fun, safe working environment.</string>

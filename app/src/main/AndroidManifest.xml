@@ -3,8 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bullrunmarketapplication">
 
-    <!--suppressed tools:ignore backup and Google App indexing as we won't need
-   them and they throw warnings without-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/usflogo"
@@ -13,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".Checkout" />
+        <activity android:name=".About" />
         <activity
             android:name=".pizzatime"
             android:label="@string/title_activity_pizzatime"
@@ -39,10 +39,10 @@
             android:label="@string/title_activity_truck_interface"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TruckSelection"
+            android:name=".MainActivity"
             android:label="@string/title_activity_truck_selection"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".TruckSelection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -2,11 +2,9 @@
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimaryDark"
     android:theme="@style/CustomToolbarStyle"
-    app:popupTheme="@style/CustomPopupStyle"
-    >
-
+    app:popupTheme="@style/CustomPopupStyle" >
 
 </android.support.v7.widget.Toolbar>
