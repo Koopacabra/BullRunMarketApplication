@@ -10,19 +10,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.bullrunmarketapplication.Model.User;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
     //Firebase
     FirebaseDatabase database;
-    DatabaseReference user;
+    DatabaseReference users;
 
     EditText edtUsername, edtPassword;
     Button btnSignIn;
@@ -30,11 +28,11 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstances) {
         super.onCreate(savedInstances);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_login);
 
         //Firebase
         database = FirebaseDatabase.getInstance();
-        user = database.getReference("User");
+        users = database.getReference("User");
 
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
@@ -51,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void signIn(final String username, final String password) {
-        user.addListenerForSingleValueEvent(new ValueEventListener() {
+        users.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.child(username).exists()){ //user
@@ -59,6 +57,10 @@ public class LoginActivity extends AppCompatActivity {
                         User login = dataSnapshot.child(username).getValue(User.class);
                         if(login.getPassword().equals(password)){
                             Toast.makeText(LoginActivity.this, "Login success!", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(getApplicationContext(), TruckSelection.class);
+                            startActivity(intent);
+
                         }
                         else{
                             Toast.makeText(LoginActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();

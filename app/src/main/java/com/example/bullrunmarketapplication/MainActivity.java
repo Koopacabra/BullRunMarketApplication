@@ -19,13 +19,13 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openpizzatime();
+                openSignIn();
             }
         });
     }
 
-    public void openpizzatime() {
-        Intent intent = new Intent(this, SignIn.class);
+    public void openSignIn() {
+        Intent intent = new Intent(this, SignUp.class);
         startActivity(intent);
     }
 }

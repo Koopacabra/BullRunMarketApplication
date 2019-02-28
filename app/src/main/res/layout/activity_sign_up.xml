@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".SignIn">
+    tools:context=".SignUp">
 
     <LinearLayout
         android:orientation="vertical"
@@ -19,6 +19,12 @@
         android:layout_centerInParent='true'
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textSize="28dp"/>
 
     <!-- Login progress -->
     <ProgressBar
@@ -50,8 +56,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/UserName"
                     android:maxLines="1"
-                    android:singleLine="true"
-                    android:text="Heather"/>
+                    android:singleLine="true" />
 
 
             </android.support.design.widget.TextInputLayout>
@@ -65,7 +70,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
-                    android:text="1234"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
@@ -76,21 +80,21 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/btnSignIn"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_sign_in"
-                android:textStyle="bold" />
-
-            <Button
                 android:id="@+id/btnRegister"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_register"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnToSignIn"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="400dp"
+                android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
         </LinearLayout>
