@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/driving_crab_layout"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Driving Crab Menu"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Entrees"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Shrimp Po Boy"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <Button
+            android:id="@+id/shrimp"
+            android:layout_weight="1"
+            android:text="Add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Fish and Chips"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <Button
+            android:id="@+id/fish"
+            android:layout_weight="1"
+            android:text="Add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Conch Fritters"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <Button
+            android:id="@+id/conch"
+            android:layout_weight="1"
+            android:text="Add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Beef Sliders"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <Button
+            android:id="@+id/beef"
+            android:layout_weight="1"
+            android:text="Add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Veggie Muffaletta"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <Button
+            android:id="@+id/veggie"
+            android:layout_weight="1"
+            android:text="Add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Pork Attack"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <Button
+            android:id="@+id/pork"
+            android:layout_weight="1"
+            android:text="Add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <!-- Sides -->
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Sides"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Duchess Fries"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <Button
+            android:id="@+id/fries"
+            android:layout_weight="1"
+            android:text="Add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!-- Deserts -->
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Deserts"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <TextView
+            android:layout_weight="1"
+            android:text="Unicorn Horn"
+            android:textSize="20sp"
+            android:textColor="#0a0a0a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <Button
+            android:id="@+id/churro"
+            android:layout_weight="1"
+            android:text="Add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

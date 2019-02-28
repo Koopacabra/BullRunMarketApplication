@@ -45,4 +45,31 @@
     <string name="thums_up">Thums Up</string>
     <string name="mango_lassi">Mango Lassi</string>
 
+    //Italian on Wheels Strings
+    <string name="italian_menu">Italian on Wheels Menu</string>
+    <string name="entrees">Entrees</string>
+    <string name="shells">Stuffed Shells</string>
+    <string name="add2">Add</string>
+    <string name="grilled_salmon">Grilled Faroe Islant Salmon</string>
+    <string name="add3">Add</string>
+    <string name="spaghetti">Spaghetti and Meatballs</string>
+    <string name="apps2">Appetizers</string>
+    <string name="knots">Garlic Knots</string>
+    <string name="mozz">Mozerella Sticks</string>
+    <string name="salad">Salads</string>
+    <string name="grilled_salad">Grilled Chicken Cesear Salad</string>
+
+    //Driving Crab Strings
+    <string name="seafood_menu">Driving Crab Menu</string>
+    <string name="shrimp">Shrimp Po Boy</string>
+    <string name="fish_chips">Fish and Chips</string>
+    <string name="conch">Conch Fritters</string>
+    <string name="beef_sliders">Beef Sliders</string>
+    <string name="veggie">Veggie Muffaletta</string>
+    <string name="pork">Pork Attack</string>
+    <string name="sides">Sides</string>
+    <string name="fries_duchess">Duchess Fries</string>
+    <string name="churro">Unicorn Horn</string>
+    <string name="deserts">Deserts</string>
+
 </resources>
