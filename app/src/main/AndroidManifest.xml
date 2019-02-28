@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bullrunmarketapplication">
 
+>>>>>>> Stashed changes
     <application
         android:allowBackup="true"
         android:icon="@mipmap/usflogo"
