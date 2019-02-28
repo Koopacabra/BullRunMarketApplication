@@ -10,6 +10,11 @@
     tools:context=".hyderabadi_layout"
     tools:showIn="@layout/activity_hyderabadi_layout">
 
+    <!--including the appBar toolbar at the top of the activity-->
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/app_bar" />
+
     <RelativeLayout
         android:layout_marginTop="20dp"
         android:layout_weight="2"

@@ -9,6 +9,7 @@
     tools:context=".TruckSelection"
     tools:showIn="@layout/activity_truck_selection">
 
+    <!--including the appBar toolbar at the top of the activity-->
     <include
         android:id="@+id/appBar"
         layout="@layout/app_bar" />

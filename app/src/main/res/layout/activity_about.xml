@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".About">
 
+    <!--including the appBar toolbar at the top of the activity-->
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/app_bar" />
+
 </android.support.constraint.ConstraintLayout>

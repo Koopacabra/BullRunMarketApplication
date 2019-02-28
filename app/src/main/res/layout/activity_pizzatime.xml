@@ -9,6 +9,11 @@
     tools:showIn="@layout/activity_pizzatime"
     android:orientation="vertical">
 
+    <!--including the appBar toolbar at the top of the activity-->
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/app_bar" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
