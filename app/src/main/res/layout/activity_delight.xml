@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/gradient"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".pizzatime"
-    tools:showIn="@layout/activity_pizzatime"
+    tools:context=".Delight"
+    tools:showIn="@layout/activity_delight"
     android:orientation="vertical">
 
     <!--including the appBar toolbar at the top of the activity-->
@@ -21,13 +22,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Menu"
+            android:text="@string/menu"
             android:textAlignment="center"
             android:textColor="@color/colorAccent"
             android:textSize="30sp" />
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_marginTop="10dp"
         android:weightSum="2"
@@ -38,10 +38,10 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Main Course"
+            android:text="@string/main_course"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             />
     </LinearLayout>
@@ -54,7 +54,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Pepperoni Pizza"
+            android:text="@string/chicken_biryani"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -63,7 +63,7 @@
         <Button
             android:id="@+id/cheese"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -74,16 +74,16 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Cheese Pizza"
+            android:text="@string/mysore_masala"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/pepperoni"
+            android:id="@+id/mysoremasala"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -101,10 +101,10 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Appetizers"
+            android:text="@string/apps"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             />
     </LinearLayout>
@@ -118,7 +118,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Spicy Wings"
+            android:text="@string/jelebi"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -127,7 +127,7 @@
         <Button
             android:id="@+id/popcornC"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -139,7 +139,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Breadsticks"
+            android:text="@string/gulab_jamun"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -148,7 +148,7 @@
         <Button
             android:id="@+id/breadsticks"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -166,10 +166,10 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Drinks"
+            android:text="@string/drinks"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             />
     </LinearLayout>
@@ -183,7 +183,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Coca-Cola"
+            android:text="@string/thums_up"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -192,7 +192,7 @@
         <Button
             android:id="@+id/coke"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -204,7 +204,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Sprite"
+            android:text="@string/mango_lassi"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -213,9 +213,11 @@
         <Button
             android:id="@+id/sprite"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
     </LinearLayout>
+
+
 </LinearLayout>

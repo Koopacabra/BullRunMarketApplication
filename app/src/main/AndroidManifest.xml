@@ -14,25 +14,25 @@
         <activity android:name=".Checkout" />
         <activity android:name=".About" />
         <activity
-            android:name=".pizzatime"
-            android:label="@string/title_activity_pizzatime"
-            android:parentActivityName=".pizza_layout"
+            android:name=".Pizza"
+            android:label="@string/pizza"
+            android:parentActivityName=".Pizza_Landing"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.bullrunmarketapplication.pizza_layout" />
+                android:value="com.example.bullrunmarketapplication.Pizza_Landing" />
         </activity>
         <activity
-            android:name=".pizza_layout"
-            android:label="@string/title_activity_pizza_layout"
+            android:name=".Pizza_Landing"
+            android:label="@string/pizza"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".hyderabadi_delight"
-            android:label="@string/title_activity_hyderabadi_delight"
+            android:name=".Delight"
+            android:label="@string/delight"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".hyderabadi_layout"
-            android:label="@string/title_activity_hyderabadi_layout"
+            android:name=".Delight_Landing"
+            android:label="@string/delight"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".TruckInterface"

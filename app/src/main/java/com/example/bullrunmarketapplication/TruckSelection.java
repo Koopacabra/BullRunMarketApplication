@@ -24,7 +24,7 @@ public class TruckSelection extends AppCompatActivity {
         delightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TruckSelection.this, hyderabadi_layout.class));
+                startActivity(new Intent(TruckSelection.this, Delight_Landing.class));
             }
         });
 
@@ -33,7 +33,7 @@ public class TruckSelection extends AppCompatActivity {
         pizzaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TruckSelection.this, pizza_layout.class));
+                startActivity(new Intent(TruckSelection.this, Pizza_Landing.class));
             }
         });
     }
