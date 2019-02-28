@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Menu"
+            android:text="@string/menu"
             android:textAlignment="center"
             android:textColor="@color/colorAccent"
             android:textSize="30sp" />
@@ -32,10 +32,10 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Main Course"
+            android:text="@string/main_course"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             />
     </LinearLayout>
@@ -48,7 +48,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Chicken Biryani"
+            android:text="@string/chicken_biryani"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -57,7 +57,7 @@
         <Button
             android:id="@+id/cheese"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -68,16 +68,16 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Mysore Masala Dosa"
+            android:text="@string/mysore_masala"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/pepperoni"
+            android:id="@+id/mysoremasala"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -95,10 +95,10 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Appetizers"
+            android:text="@string/apps"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             />
     </LinearLayout>
@@ -112,7 +112,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Jelebi"
+            android:text="@string/jelebi"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -121,7 +121,7 @@
         <Button
             android:id="@+id/popcornC"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -133,7 +133,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Gulab Jamun"
+            android:text="@string/gulab_jamun"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -142,7 +142,7 @@
         <Button
             android:id="@+id/breadsticks"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -160,10 +160,10 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Drinks"
+            android:text="@string/drinks"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             />
     </LinearLayout>
@@ -177,7 +177,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Thums Up"
+            android:text="@string/thums_up"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -186,7 +186,7 @@
         <Button
             android:id="@+id/coke"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -198,7 +198,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="Mango Lassi"
+            android:text="@string/mango_lassi"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -207,7 +207,7 @@
         <Button
             android:id="@+id/sprite"
             android:layout_weight="1"
-            android:text="Add"
+            android:text="@string/add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

@@ -32,6 +32,23 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <!--Landing/Submenu Strings -->
+    <string name="pizza_motto">We take pride in making a perfect pizza and providing courteous and helpful service on time all the time. Every customer says, I\'ll be back! We are the employer of choice offering team members opportunities for growth, advancement, and rewarding careers in a fun, safe working environment.</string>
+    <string name="pizza_title">We take pride in making a perfect pizza and providing courteous and helpful service on time all the time. Every customer says, I\'ll be back! We are the employer of choice offering team members opportunities for growth, advancement, and rewarding careers in a fun, safe working environment.</string>
+    <string name="make_order">Make an Order</string>
+    <string name="hyd_title">Welcome to HyderabadiDelight, where you can experience pure delight with some Indian Cuisine</string>
+    <string name="hyd_motto">We take pride in making a perfect pizza and providing courteous and helpful service on time all the time. Every customer says, I\'ll be back! We are the employer of choice offering team members opportunities for growth, advancement, and rewarding careers in a fun, safe working environment.</string>
+    <string name="menu">Menu</string>
+    <string name="main_course">Main Course</string>
+    <string name="chicken_biryani">Chicken Biryani</string>
+    <string name="add">Add</string>
+    <string name="mysore_masala">Mysore Masala Dosa</string>
+    <string name="apps">Appetizers</string>
+    <string name="jelebi">Jelebi</string>
+    <string name="gulab_jamun">Gulab Jamun</string>
+    <string name="drinks">Drinks</string>
+    <string name="thums_up">Thums Up</string>
+    <string name="mango_lassi">Mango Lassi</string>
 
 
 </resources>
