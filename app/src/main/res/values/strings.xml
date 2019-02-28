@@ -47,5 +47,10 @@
     <string name="UserName">UserName</string>
     <string name="brmlogo_mainScreen">brm logo main screen</string>
     <string name="pepperoni_pizza">Pepperoni Pizza</string>
+    <string name="cheese_pizza">Cheese Pizza</string>
+    <string name="spicy_wings">Spicy Wings</string>
+    <string name="breadsticks">Breadsticks</string>
+    <string name="coca_cola">Coca-Cola</string>
+    <string name="sprite">Sprite</string>
 
 </resources>
