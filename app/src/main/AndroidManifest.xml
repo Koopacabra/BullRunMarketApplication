@@ -39,10 +39,10 @@
             android:label="@string/title_activity_truck_interface"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TruckSelection"
+            android:name=".MainActivity"
             android:label="@string/title_activity_truck_selection"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".TruckSelection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

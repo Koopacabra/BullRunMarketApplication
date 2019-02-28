@@ -27,7 +27,8 @@
             android:gravity="center"
             android:text="@string/pizza"
             android:textSize="24sp"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -47,7 +48,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/pizza_motto"
-            android:textColor="@android:color/holo_orange_light"
             android:textSize="24sp" />
 
     </RelativeLayout>
@@ -55,14 +55,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="0dp">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/make_order"
-            android:textColor="@android:color/holo_green_light" />
+            android:background="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat" />
 
     </LinearLayout>
 
