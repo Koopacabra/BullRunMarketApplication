@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 public class TruckInterface extends AppCompatActivity {
@@ -21,6 +22,11 @@ public class TruckInterface extends AppCompatActivity {
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
+
+       /* //listView for open orders
+        String[] openOrders = {"Order 1", "Order 2", "Order 3", "Order 4", "Order 5"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getListView[].getContext(), android.R.layout.simple_expandable_list_item_1, openOrders);
+        getListView().setAdapter(adapter);*/
     }
 
     //function to create the options/overflow menu for the app bar
