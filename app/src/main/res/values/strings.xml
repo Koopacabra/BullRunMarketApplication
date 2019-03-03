@@ -18,11 +18,9 @@
     <string name="login">Login</string>
     <string name="title_activity_sign_in">Sign in</string>
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
@@ -44,6 +42,17 @@
     <string name="drinks">Drinks</string>
     <string name="thums_up">Thums Up</string>
     <string name="mango_lassi">Mango Lassi</string>
+    <string name="action_register">Register</string>
+    <string name="welcome">Welcome!</string>
+    <string name="UserName">UserName</string>
+    <string name="brmlogo_mainScreen">brm logo main screen</string>
+    <string name="pepperoni_pizza">Pepperoni Pizza</string>
+    <string name="cheese_pizza">Cheese Pizza</string>
+    <string name="spicy_wings">Spicy Wings</string>
+    <string name="breadsticks">Breadsticks</string>
+    <string name="coca_cola">Coca-Cola</string>
+    <string name="sprite">Sprite</string>
+    <string name="open_orders">Open Orders</string>
 
     //Italian on Wheels Strings
     <string name="italian_menu">Italian on Wheels Menu</string>
