@@ -27,7 +27,7 @@ public class italian_on_wheels_layout extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        button = findViewById(R.id.fab);
+        button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
