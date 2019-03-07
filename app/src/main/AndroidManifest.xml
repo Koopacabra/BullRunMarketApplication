@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".Checkout" />
+        <activity android:name=".PaymentProcessing"
+            android:theme="@style/AppTheme.PurchasePopUp"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".About" />
         <activity
             android:name=".Pizza"
@@ -42,7 +44,7 @@
             android:name=".TruckSelection"
             android:label="@string/title_activity_truck_selection"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Checkout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

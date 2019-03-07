@@ -53,6 +53,9 @@
     <string name="coca_cola">Coca-Cola</string>
     <string name="sprite">Sprite</string>
     <string name="open_orders">Open Orders</string>
+    <string name="purchase">Purchase</string>
+    <string name="confirm">Looks Good!</string>
+    <string name="orderTotal">(order total here)</string>
 
     //Italian on Wheels Strings
     <string name="italian_menu">Italian on Wheels Menu</string>

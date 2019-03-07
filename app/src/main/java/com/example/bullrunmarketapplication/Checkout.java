@@ -6,14 +6,30 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class Checkout extends AppCompatActivity {
+
+    //initializing purchase button which will activate the PaymentProcessing popup
+    Button btnPurchase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+
+        //linking the intent to open PaymentProcessing to the purchaseButton
+        btnPurchase = findViewById(R.id.purchaseButton);
+        btnPurchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pop = new Intent(getApplicationContext(), PaymentProcessing.class);
+                startActivity(pop);
+            }
+        });
 
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
