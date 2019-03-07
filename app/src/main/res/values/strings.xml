@@ -71,17 +71,4 @@
     <string name="salad">Salads</string>
     <string name="grilled_salad">Grilled Chicken Cesear Salad</string>
 
-    //Driving Crab Strings
-    <string name="seafood_menu">Driving Crab Menu</string>
-    <string name="shrimp">Shrimp Po Boy</string>
-    <string name="fish_chips">Fish and Chips</string>
-    <string name="conch">Conch Fritters</string>
-    <string name="beef_sliders">Beef Sliders</string>
-    <string name="veggie">Veggie Muffaletta</string>
-    <string name="pork">Pork Attack</string>
-    <string name="sides">Sides</string>
-    <string name="fries_duchess">Duchess Fries</string>
-    <string name="churro">Unicorn Horn</string>
-    <string name="deserts">Deserts</string>
-
 </resources>
