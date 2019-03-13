@@ -10,12 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class Rico_Tacos_Landing extends AppCompatActivity {
+public class Italian_Landing extends AppCompatActivity {
     private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rico_landing);
+        setContentView(R.layout.activity_italian_landing);
 
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
@@ -25,12 +25,12 @@ public class Rico_Tacos_Landing extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openricos();
+                openiow();
             }
         });
     }
-    public void openricos() {
-        Intent intent = new Intent(this, Rico_Tacos.class);
+    public void openiow() {
+        Intent intent = new Intent(this, Italian.class);
         startActivity(intent);
     }
 

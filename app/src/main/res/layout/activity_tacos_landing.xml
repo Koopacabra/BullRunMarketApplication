@@ -8,8 +8,8 @@
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@drawable/gradient"
-    tools:context=".IOW_Landing"
-    tools:showIn="@layout/activity_iow_landing">
+    tools:context=".Tacos_Landing"
+    tools:showIn="@layout/activity_tacos_landing">
 
     <!--including the appBar toolbar at the top of the activity-->
     <include
@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/textGrid"
             android:gravity="center"
-            android:text="@string/italian"
+            android:text="@string/tacos"
             android:textSize="24sp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"

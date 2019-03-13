@@ -2,7 +2,7 @@
     <string name="app_name">Bull Run Market</string>
     <string name="title_activity_truck_selection">TruckSelection</string>
     <string name="select_truck">Select a Truck…</string>
-    <string name="tacos">Rico Tacos</string> <!-- I really hope Ben made Ricos tacos and not the other thing. :) thanks for believing in me-->
+    <string name="tacos">Rico\'s Tacos</string> <!-- I really hope Ben made Ricos tacos and not the other thing. :) thanks for believing in me-->
     <string name="pizza">Pizza Time</string>
     <string name="italian">Italian on Wheels</string>
     <string name="delight">Hyderabadi Delight</string> <!-- This is Hyderabadi Delight -->
@@ -28,11 +28,11 @@
         completions."</string>
 
     <!--Landing/Submenu Strings -->
-    <string name="pizza_motto">We take pride in making a perfect pizza and providing courteous and helpful service on time all the time. Every customer says, I\'ll be back! We are the employer of choice offering team members opportunities for growth, advancement, and rewarding careers in a fun, safe working environment.</string>
+    <string name="pizza_motto">We take pride in making a perfect pizza and providing courteous and helpful service on-time, all the time! Every customer says, I\'ll be back! We are the employer of choice offering team members opportunities for growth, advancement, and rewarding careers in a fun, safe working environment.</string>
     <string name="make_order">Let\'s Eat!</string>
     <string name="hyd_motto">Welcome to HyderabadiDelight, where you can experience pure delight with some Indian Cuisine</string>
-    <string name="iow_motto">Grandmas recipes you love and adore all Italian flavors that will take you to Sicily</string>
-    <string name="rico_motto">Best authentic Mexican Cuisine the bay has to offer</string>
+    <string name="iow_motto">Grandma\'s recipes you\'ll love and adore with Italian flavors that will take you to Sicily</string>
+    <string name="rico_motto">The best authentic Mexican cuisine the bay area has to offer</string>
     <string name="menu">Menu</string>
     <string name="main_course">Main Course</string>
     <string name="chicken_biryani">Chicken Biryani</string>
@@ -64,24 +64,24 @@
     <string name="entrees">Entrees</string>
     <string name="shells">Stuffed Shells</string>
     <string name="add2">Add</string>
-    <string name="grilled_salmon">Grilled Faroe Islant Salmon</string>
+    <string name="grilled_salmon">Grilled Faroe Island Salmon</string>
     <string name="add3">Add</string>
     <string name="spaghetti">Spaghetti and Meatballs</string>
     <string name="apps2">Appetizers</string>
     <string name="knots">Garlic Knots</string>
-    <string name="mozz">Mozerella Sticks</string>
+    <string name="mozz">Mozzarella Sticks</string>
     <string name="salad2">Salads</string>
-    <string name="grilled_salad">Grilled Chicken Cesear Salad</string>
+    <string name="grilled_salad">Grilled Chicken Caesar Salad</string>
     <string name="oyster">Oyster Mushroom Salad</string>
 
-    //Rico Tacos
-    <string name="taco_menu">Rico Tacos</string>
+    //Ricos Tacos
+    <string name="taco_menu">Rico\'s Tacos</string>
     <string name="entrees2">Entrees</string>
     <string name="cheeseQuesadilla">Cheese Quesadilla</string>
     <string name="add5">Add</string>
     <string name="rolledTacos">Rolled Tacos</string>
     <string name="add4">Add</string>
-    <string name="combo">Combo Plattter</string>
+    <string name="combo">Combo Platter</string>
     <string name="apps3">Appetizers</string>
     <string name="churro">Churro</string>
     <string name="cheeseRoll">Cheese Roll</string>

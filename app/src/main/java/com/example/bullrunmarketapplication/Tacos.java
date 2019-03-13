@@ -8,12 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class Rico_Tacos extends AppCompatActivity {
+public class Tacos extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rico);
+        setContentView(R.layout.activity_tacos);
 
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);

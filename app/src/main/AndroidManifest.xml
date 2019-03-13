@@ -37,14 +37,30 @@
             android:label="@string/delight"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".Italian_Landing"
+            android:label="@string/italian"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Italian"
+            android:label="@string/italian"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Tacos_Landing"
+            android:label="@string/tacos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Tacos"
+            android:label="@string/tacos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".TruckInterface"
             android:label="@string/title_activity_truck_interface"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TruckSelection"
+            android:name=".MainActivity"
             android:label="@string/title_activity_truck_selection"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".TruckSelection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

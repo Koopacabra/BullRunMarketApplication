@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".IOW"
-    tools:showIn="@layout/activity_iow"
+    tools:context=".Italian"
+    tools:showIn="@layout/activity_italian"
     android:orientation="vertical">
 
     <!--including the appBar toolbar at the top of the activity-->
@@ -41,7 +41,7 @@
             android:text="@string/entrees"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             />
     </LinearLayout>
@@ -126,7 +126,7 @@
             android:text="@string/apps2"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             />
     </LinearLayout>

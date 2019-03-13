@@ -36,6 +36,24 @@ public class TruckSelection extends AppCompatActivity {
                 startActivity(new Intent(TruckSelection.this, Pizza_Landing.class));
             }
         });
+
+        //delight image button intent to navigate to italian on wheels landing page
+        ImageButton italianButton = findViewById(R.id.cardImage_italian);
+        italianButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TruckSelection.this, Italian_Landing.class));
+            }
+        });
+
+        //delight image button intent to navigate to ricos tacos landing page
+        ImageButton tacosButton = findViewById(R.id.cardImage_tacos);
+        tacosButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TruckSelection.this, Tacos_Landing.class));
+            }
+        });
     }
 
     //function to create the options/overflow menu for the app bar

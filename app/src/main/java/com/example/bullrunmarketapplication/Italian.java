@@ -6,32 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-public class IOW_Landing extends AppCompatActivity {
-    private Button button;
+public class Italian extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_iow_landing);
+        setContentView(R.layout.activity_italian);
 
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
-
-        button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openiow();
-            }
-        });
-    }
-    public void openiow() {
-        Intent intent = new Intent(this, IOW.class);
-        startActivity(intent);
     }
 
     //function to create the options/overflow menu for the app bar
