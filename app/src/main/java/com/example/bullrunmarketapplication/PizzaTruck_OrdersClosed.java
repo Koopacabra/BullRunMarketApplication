@@ -8,12 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class DelightTruck_OpenOrders extends AppCompatActivity {
+public class PizzaTruck_OrdersClosed extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delight_orders_open);
+        setContentView(R.layout.activity_pizza_orders_closed);
 
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
@@ -67,4 +67,3 @@ public class DelightTruck_OpenOrders extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
-

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_reverse"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".TacosTruck_OpenOrders" >
+    tools:context=".TacosTruck_OrdersOpen" >
 
     <include layout="@layout/app_bar"
         android:id="@+id/appBar" />

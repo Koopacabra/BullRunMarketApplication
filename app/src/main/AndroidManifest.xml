@@ -11,9 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".TacosTruck_OpenOrders" />
-        <activity android:name=".ItalianTruck_OpenOrders" />
-        <activity android:name=".DelightTruck_OpenOrders" />
+        <activity android:name=".TacosTruck_OrdersClosed"></activity>
+        <activity android:name=".PizzaTruck_OrdersClosed" />
+        <activity android:name=".ItalianTruck_OrdersClosed" />
+        <activity android:name=".DelightTruck_OrdersClosed" />
+        <activity android:name=".TacosTruck_OrdersOpen" />
+        <activity android:name=".ItalianTruck_OrdersOpen" />
+        <activity android:name=".DelightTruck_OrdersOpen" />
         <activity
             android:name=".PaymentProcessing"
             android:theme="@style/AppTheme.PurchasePopUp" />
@@ -57,7 +61,7 @@
             android:label="@string/tacos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PizzaTruck_OpenOrders"
+            android:name=".PizzaTruck_OrdersOpen"
             android:label="@string/title_activity_truck_interface"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
