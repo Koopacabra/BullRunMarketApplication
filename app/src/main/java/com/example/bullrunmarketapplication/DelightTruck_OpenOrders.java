@@ -13,7 +13,7 @@ public class DelightTruck_OpenOrders extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delight_open_orders);
+        setContentView(R.layout.activity_delight_orders_open);
 
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
