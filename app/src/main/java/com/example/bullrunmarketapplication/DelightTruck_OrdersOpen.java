@@ -28,7 +28,7 @@ public class DelightTruck_OrdersOpen extends AppCompatActivity {
     //function to create the options/overflow menu for the app bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_options_button, menu);
+        getMenuInflater().inflate(R.menu.menu_options_button_orders_closed, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -54,11 +54,11 @@ public class DelightTruck_OrdersOpen extends AppCompatActivity {
                 startActivity(about);
                 break;
             //case to go to Checkout
-            case R.id.options_cart:
+            case R.id.orders_closed:
                 //toast to float message going to Cart
-                Toast.makeText(getApplicationContext(), "Does everything look correct?", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "These orders are completed", Toast.LENGTH_SHORT).show();
                 //intent to navigate to Checkout activity
-                Intent checkout = new Intent(this, Checkout.class);
+                Intent checkout = new Intent(this, DelightTruck_OrdersClosed.class);
                 startActivity(checkout);
             default:
                 //unknown error action TBD

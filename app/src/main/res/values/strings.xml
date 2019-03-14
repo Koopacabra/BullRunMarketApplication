@@ -87,6 +87,13 @@
     <string name="cheeseRoll">Cheese Roll</string>
     <string name="salad">Taco Salad</string>
     <string name="mexicanSalad">Mexican Salad</string>
+    <string name="tacosClosed">Rico\'s Closed Orders</string>
+    <string name="italianClosed">Italian Closed Orders</string>
+    <string name="delightClosed">Hyderabadi Closed Orders</string>
+    <string name="tacosOpen">Rico\'s Open Orders</string>
+    <string name="pizzaClosed">Pizza Closed Orders</string>
+    <string name="italianOpen">Italian Open Orders</string>
+    <string name="delightOpen">Hyderabadi Open Orders</string>
 
 
 </resources>

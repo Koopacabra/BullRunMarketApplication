@@ -11,13 +11,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".TacosTruck_OrdersClosed"></activity>
-        <activity android:name=".PizzaTruck_OrdersClosed" />
-        <activity android:name=".ItalianTruck_OrdersClosed" />
-        <activity android:name=".DelightTruck_OrdersClosed" />
-        <activity android:name=".TacosTruck_OrdersOpen" />
-        <activity android:name=".ItalianTruck_OrdersOpen" />
-        <activity android:name=".DelightTruck_OrdersOpen" />
+        <activity
+            android:name=".TacosTruck_OrdersClosed"
+            android:label="@string/tacosClosed"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".PizzaTruck_OrdersClosed"
+            android:label="@string/pizzaClosed"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ItalianTruck_OrdersClosed"
+            android:label="@string/italianClosed"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".DelightTruck_OrdersClosed"
+            android:label="@string/delightClosed"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".TacosTruck_OrdersOpen"
+            android:label="@string/tacosOpen"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ItalianTruck_OrdersOpen"
+            android:label="@string/italianOpen"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".DelightTruck_OrdersOpen"
+            android:label="@string/delightOpen"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PaymentProcessing"
             android:theme="@style/AppTheme.PurchasePopUp" />
@@ -26,11 +47,7 @@
         <activity
             android:name=".Pizza"
             android:label="@string/pizza"
-            android:parentActivityName=".Pizza_Landing"
             android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.bullrunmarketapplication.Pizza_Landing" />
         </activity>
         <activity
             android:name=".Pizza_Landing"
@@ -68,7 +85,7 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_truck_selection"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TruckSelection">
+        <activity android:name=".TruckSelection" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
