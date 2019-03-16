@@ -8,7 +8,9 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.1'
-        classpath 'com.google.gms:google-services:4.1.0'
+
+        //Chris changed 4.1.0 -> 4.0.0 on 3/16/19 based on https://stackoverflow.com/questions/45977847/make-sure-to-call-firebaseapp-initializeappcontext-first-in-android
+        classpath 'com.google.gms:google-services:4.0.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

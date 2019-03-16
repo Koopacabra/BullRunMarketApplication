@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.FirebaseApp;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
@@ -13,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //initializing Firebase app to this activity
+        FirebaseApp.initializeApp(this);
+        //linking to appropriate layout
         setContentView(R.layout.activity_main_screen);
 
         button = findViewById(R.id.btnWelcome);

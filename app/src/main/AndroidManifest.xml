@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivity"
+            android:name=".TruckSelection"
             android:label="@string/title_activity_truck_selection"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -87,7 +87,11 @@
         <activity
             android:name=".About" />
         <activity
-            android:name=".TruckSelection" >
+            android:name=".SignUp" />
+        <activity
+            android:name=".LoginActivity" />
+        <activity
+            android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
