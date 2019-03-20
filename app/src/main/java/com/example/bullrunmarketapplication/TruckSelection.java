@@ -151,6 +151,12 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
     boolean isAvailable(Class clazz){
         Calendar now = Calendar.getInstance();
         int dayOfWeek = now.get(Calendar.DAY_OF_WEEK);
+
+        // No trucks are available on Sunday -- changes all icons to greyscale
+        if(dayOfWeek == 1){
+            return false;
+        }
+
         if(clazz.equals(Delight_Landing.class)){
             // Monday, Wed, Thursday, Fri, Sat
             return (dayOfWeek == 2 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
