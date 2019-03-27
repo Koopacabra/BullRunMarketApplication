@@ -76,14 +76,15 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="@string/grilled_salmon"
+            android:text="@string/authenticPizza"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
+
         <Button
-            android:id="@+id/salmon"
+            android:id="@+id/authenticPizza"
             android:layout_weight="1"
             android:text="@string/add3"
             android:layout_width="match_parent"

@@ -62,17 +62,18 @@
     //Italian on Wheels Strings
     <string name="italian_menu">Italian on Wheels Menu</string>
     <string name="entrees">Entrees</string>
-    <string name="shells">Stuffed Shells</string>
+    <string name="shells">Stuffed Shells ($12.99)</string>
     <string name="add2">Add</string>
-    <string name="grilled_salmon">Grilled Faroe Island Salmon</string>
+    <string name="authenticPizza">Pizza Napoletana ($12.50)</string>
     <string name="add3">Add</string>
-    <string name="spaghetti">Spaghetti and Meatballs</string>
+    <string name="spaghetti">Spaghetti and Meatballs ($15)</string>
     <string name="apps2">Appetizers</string>
-    <string name="knots">Garlic Knots</string>
-    <string name="mozz">Mozzarella Sticks</string>
+    <string name="knots">Garlic Knots (12.50)</string>
+    <string name="mozz">Mozzerella Sticks ($12.50)</string>
     <string name="salad2">Salads</string>
-    <string name="grilled_salad">Grilled Chicken Caesar Salad</string>
-    <string name="oyster">Oyster Mushroom Salad</string>
+    <string name="grilled_salad">Grilled Chicken Cesear Salad ($11.25)</string>
+    <string name="oyster">Oyster Mushroom Salad (MP)</string>
+    <string name="total">Subtotal</string>
 
     //Ricos Tacos
     <string name="taco_menu">Rico\'s Tacos</string>
