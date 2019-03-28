@@ -8,15 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
-import com.google.firebase.database.ValueEventListener;
 import com.example.bullrunmarketapplication.Model.User;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-public class SignUp extends AppCompatActivity {
+public class CustSignUp extends AppCompatActivity {
 
     //Firebase
     FirebaseDatabase database;
@@ -28,7 +28,8 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstances) {
         super.onCreate(savedInstances);
-        setContentView(R.layout.activity_sign_up);
+        FirebaseApp.initializeApp(this);
+        setContentView(R.layout.activity_cust_signup);
 
         //Firebase
         database = FirebaseDatabase.getInstance();
@@ -43,7 +44,7 @@ public class SignUp extends AppCompatActivity {
         btnToSignIn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CustLogin.class);
                 startActivity(intent);
             }
         });
@@ -58,10 +59,10 @@ public class SignUp extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         if(dataSnapshot.child(user.getUsername()).exists())
-                            Toast.makeText(SignUp.this, "This Username already exists!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CustSignUp.this, "This Username already exists!", Toast.LENGTH_SHORT).show();
                         else {
                             users.child(user.getUsername()).setValue(user);
-                            Toast.makeText(SignUp.this, "Registered successfully!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CustSignUp.this, "Registered successfully!", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -74,3 +75,4 @@ public class SignUp extends AppCompatActivity {
         });
     }
 }
+

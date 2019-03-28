@@ -10,13 +10,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.bullrunmarketapplication.Model.User;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class LoginActivity extends AppCompatActivity {
+public class CustLogin extends AppCompatActivity {
 
     //Firebase
     FirebaseDatabase database;
@@ -28,9 +29,12 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstances) {
         super.onCreate(savedInstances);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_cust_login);
 
         //Firebase
+        //super.onCreate();
+        FirebaseApp.initializeApp(this);
+
         database = FirebaseDatabase.getInstance();
         users = database.getReference("User");
 
@@ -56,18 +60,18 @@ public class LoginActivity extends AppCompatActivity {
                     if(!username.isEmpty()){
                         User login = dataSnapshot.child(username).getValue(User.class);
                         if(login.getPassword().equals(password)){
-                            Toast.makeText(LoginActivity.this, "Login success!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CustLogin.this, "Login success!", Toast.LENGTH_SHORT).show();
 
                             Intent intent = new Intent(getApplicationContext(), TruckSelection.class);
                             startActivity(intent);
 
                         }
                         else{
-                            Toast.makeText(LoginActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CustLogin.this, "Wrong password!", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else
-                        Toast.makeText(LoginActivity.this, "Username not registered!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CustLogin.this, "Username not registered!", Toast.LENGTH_SHORT).show();
                 }
             }
 
