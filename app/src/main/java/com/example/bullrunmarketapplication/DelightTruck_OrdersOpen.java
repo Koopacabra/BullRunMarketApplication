@@ -42,7 +42,7 @@ public class DelightTruck_OrdersOpen extends AppCompatActivity {
                 //toast to float Goodbye message on sign out
                 Toast.makeText(getApplicationContext(), "Goodbye!", Toast.LENGTH_SHORT).show();
                 //intent to navigate to Main (sign in activity)
-                Intent signOut = new Intent(this, MainActivity.class);
+                Intent signOut = new Intent(this, SelectionScreen.class);
                 startActivity(signOut);
                 break;
             //case to go to About

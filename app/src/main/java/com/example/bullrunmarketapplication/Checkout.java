@@ -60,6 +60,8 @@ public class Checkout extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
                 listView.setAdapter(adapter);
 
+                //added != null statement to avoid possible nullPointerException from the println; 3/28CC
+                assert cartItems != null;
                 System.out.println(cartItems.toString());
             }
         });
@@ -105,7 +107,7 @@ public class Checkout extends AppCompatActivity {
                 //toast to float Goodbye message on sign out
                 Toast.makeText(getApplicationContext(), "Goodbye!", Toast.LENGTH_SHORT).show();
                 //intent to navigate to Main (sign in activity)
-                Intent signOut = new Intent(this, MainActivity.class);
+                Intent signOut = new Intent(this, SelectionScreen.class);
                 startActivity(signOut);
                 break;
             //case to go to About

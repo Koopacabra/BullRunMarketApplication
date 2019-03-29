@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".MainActivity">
+    tools:context=".SelectionScreen">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/linearLayout"
@@ -40,7 +40,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/Customer"
+        android:text="@string/Customers"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"

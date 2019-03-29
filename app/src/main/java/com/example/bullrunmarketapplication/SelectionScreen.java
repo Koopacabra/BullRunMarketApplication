@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.google.firebase.FirebaseApp;
 
-public class MainActivity extends AppCompatActivity {
+public class SelectionScreen extends AppCompatActivity {
 
     private Button button;
 
