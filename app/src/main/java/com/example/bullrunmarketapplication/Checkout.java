@@ -19,6 +19,7 @@ import com.example.bullrunmarketapplication.repository.CartItemRepository;
 import com.example.bullrunmarketapplication.storage.CartItem;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Checkout extends AppCompatActivity {
@@ -27,11 +28,14 @@ public class Checkout extends AppCompatActivity {
     Button btnPurchase;
 
 
-    //intitalize views to display cart content
-    TextView priceView,quantityView;
+    //initialize views to display cart content
+    TextView priceView1, priceView2, priceView3, priceView4;
     ListView listView;
     //ArrayList<String> cart_choices;
-    Double price_usd;
+    Double price_usdI;
+    Double price_usdP;
+    Double price_usdT;
+    Double price_usdD;
     //int quantity;
     NumberFormat price = NumberFormat.getCurrencyInstance();
 
@@ -45,8 +49,11 @@ public class Checkout extends AppCompatActivity {
 
         cartItemRepository  = new  CartItemRepository(getApplicationContext());
 
-        listView = (ListView) findViewById(R.id.ListViewCatalog);
-        priceView = (TextView) findViewById(R.id.TextViewSubtotal);
+        listView = findViewById(R.id.ListViewCatalog);
+        priceView1 = findViewById(R.id.TextViewSubtotal);
+        priceView2 = findViewById(R.id.TextViewSubtotal);
+        priceView3 = findViewById(R.id.TextViewSubtotal);
+        priceView4 = findViewById(R.id.TextViewSubtotal);
         //quantityView = (TextView) findViewById(R.id.cart_product_quantity);
 
         LiveData<List<CartItem>> items = cartItemRepository.getCartItem();
@@ -68,11 +75,16 @@ public class Checkout extends AppCompatActivity {
 
 
         Intent i = getIntent();
-        price_usd = i.getDoubleExtra("Total",Italian.cartTotal);
-        priceView.setText(price.format(price_usd));
+        price_usdI = i.getDoubleExtra("Total",Italian.cartTotal);
+        price_usdD = i.getDoubleExtra("Total",Delight.cartTotal);
+        price_usdP = i.getDoubleExtra("Total",Pizza.cartTotal);
+        price_usdT = i.getDoubleExtra("Total",Tacos.cartTotal);
+        priceView1.setText(price.format(price_usdI));
+        priceView2.setText(price.format(price_usdD));
+        priceView3.setText(price.format(price_usdP));
+        priceView4.setText(price.format(price_usdT));
         //quantity = i.getIntExtra("Quantity", IOW.quantity);
         //priceView.setText(price.format(price_usd));
-
 
         //linking the intent to open PaymentProcessing to the purchaseButton
         btnPurchase = findViewById(R.id.purchaseButton);
@@ -89,6 +101,7 @@ public class Checkout extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
     }
+
 
     //function to create the options/overflow menu for the app bar
     @Override

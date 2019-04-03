@@ -10,10 +10,12 @@
     tools:showIn="@layout/activity_italian"
     android:orientation="vertical">
 
-    <!--including the appBar toolbar at the top of the activity-->
+    <!--including the appBar toolbar at the top of the activity -->
     <include
         android:id="@+id/appBar"
         layout="@layout/app_bar" />
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,6 +66,7 @@
             android:id="@+id/shells"
             android:layout_weight="1"
             android:text="@string/add2"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -87,6 +90,7 @@
             android:id="@+id/authenticPizza"
             android:layout_weight="1"
             android:text="@string/add3"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -107,6 +111,7 @@
             android:id="@+id/spaghetti"
             android:layout_weight="1"
             android:text="@string/add"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -151,6 +156,7 @@
             android:id="@+id/mozerella"
             android:layout_weight="1"
             android:text="@string/add2"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -172,6 +178,7 @@
             android:id="@+id/garlicKnots"
             android:layout_weight="1"
             android:text="@string/add3"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -216,6 +223,7 @@
             android:id="@+id/oyster"
             android:layout_weight="1"
             android:text="@string/add"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -237,6 +245,7 @@
             android:id="@+id/cesarsalad"
             android:layout_weight="1"
             android:text="@string/add"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

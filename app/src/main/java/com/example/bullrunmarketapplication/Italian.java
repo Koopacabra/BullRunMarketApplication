@@ -36,13 +36,13 @@ public class Italian extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
 
-        shells = (Button) findViewById(R.id.shells);
-        authenticPizza = (Button) findViewById(R.id.authenticPizza);
-        spaghetti = (Button) findViewById(R.id.spaghetti);
-        mozerella = (Button) findViewById(R.id.mozerella);
-        garlicKnots = (Button) findViewById(R.id.garlicKnots);
-        oyster = (Button) findViewById(R.id.oyster);
-        cesarsalad = (Button) findViewById(R.id.cesarsalad);
+        shells = findViewById(R.id.shells);
+        authenticPizza = findViewById(R.id.authenticPizza);
+        spaghetti = findViewById(R.id.spaghetti);
+        mozerella = findViewById(R.id.mozerella);
+        garlicKnots = findViewById(R.id.garlicKnots);
+        oyster = findViewById(R.id.oyster);
+        cesarsalad = findViewById(R.id.cesarsalad);
 
         cartItemRepository  = new  CartItemRepository(getApplicationContext());
     }
@@ -73,22 +73,18 @@ public class Italian extends AppCompatActivity {
             Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
             cartTotal += 15.00;
         } else if (view == findViewById(R.id.mozerella)) {
-
             addItem("Mozerella Sticks",12.50);
             Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
             cartTotal += 12.50;
         } else if (view == findViewById(R.id.garlicKnots)) {
-
             addItem("Garlic Knots",2.50);
             Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
             cartTotal += 2.50;
         } else if (view == findViewById(R.id.oyster)) {
-
             addItem("Local Oyster Mushroom Salad",12.50);
             Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
             cartTotal += 12.50;
         } else if (view == findViewById(R.id.cesarsalad)) {
-
             addItem("Grilled Chicken Caesar Salad",11.25);
             Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
             cartTotal += 11.25;
@@ -106,4 +102,47 @@ public class Italian extends AppCompatActivity {
         startActivity(i);
 
     }
+
+    //function to create the options/overflow menu for the app bar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_options_button, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    /*function to determine what happens when an item is selected
+    from the options menu*/
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            //case for Sign Out
+            case R.id.options_signOut:
+                //toast to float Goodbye message on sign out
+                Toast.makeText(getApplicationContext(), "Goodbye!", Toast.LENGTH_SHORT).show();
+                //intent to navigate to Main (sign in activity)
+                Intent signOut = new Intent(this, SelectionScreen.class);
+                startActivity(signOut);
+                break;
+            //case to go to About
+            case R.id.options_about:
+                //toast to float message going to About activity
+                Toast.makeText(getApplicationContext(), "A little more about us...", Toast.LENGTH_SHORT).show();
+                //intent to navigate to About activity
+                Intent about = new Intent(this, About.class);
+                startActivity(about);
+                break;
+            //case to go to Checkout
+            case R.id.options_cart:
+                //toast to float message going to Cart
+                Toast.makeText(getApplicationContext(), "Does everything look correct?", Toast.LENGTH_SHORT).show();
+                //intent to navigate to Checkout activity
+                Intent checkout = new Intent(this, Checkout.class);
+                startActivity(checkout);
+            default:
+                //unknown error action TBD
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }

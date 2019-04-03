@@ -6,9 +6,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.bullrunmarketapplication.repository.CartItemRepository;
+import com.example.bullrunmarketapplication.storage.CartItem;
+
+import java.util.ArrayList;
+
 public class Tacos extends AppCompatActivity {
+
+    Button cheeseQ, tacos, combo, tacoSalad, mexSalad, cheeseRoll;
+
+    //string to hold food items and double to hold total price amount
+    public static ArrayList<String> cart = new ArrayList<>();
+    public static Double cartTotal = 0.00;
+    public static int quantity = 0;
+
+    private CartItemRepository cartItemRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +35,68 @@ public class Tacos extends AppCompatActivity {
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
+
+        cheeseQ = findViewById(R.id.cheesequesadilla);
+        tacos = findViewById(R.id.tacos);
+        combo = findViewById(R.id.combo);
+        cheeseRoll = findViewById(R.id.cheeseroll);
+        tacoSalad = findViewById(R.id.ts);
+        mexSalad = findViewById(R.id.mex);
+
+
+        cartItemRepository  = new  CartItemRepository(getApplicationContext());
+    }
+
+    private void addItem(String name , Double amount){
+        CartItem item  = new CartItem();
+        item.setName(name);
+        item.setAmount(amount);
+        cartItemRepository.saveCartItem(item);
+    }
+
+    //function to add food items to cart
+    public void add_to_cart(View view) {
+
+        if (view == findViewById(R.id.cheesequesadilla)) {
+            addItem("Cheese Quesadilla", 8.50);
+            Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
+            cartTotal += 8.50;
+
+        } else if (view == findViewById(R.id.tacos)) {
+
+            addItem("Rolled Tacos",12.50);
+            Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
+            cartTotal += 14.98;
+        } else if (view == findViewById(R.id.combo)) {
+
+            addItem("Combo Platter",10.50);
+            Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
+            cartTotal += 10.50;
+        } else if (view == findViewById(R.id.cheeseroll)) {
+            addItem("Cheese Roll",4.50);
+            Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
+            cartTotal += 4.50;
+        } else if (view == findViewById(R.id.ts)) {
+            addItem("Taco Salad",11.00);
+            Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
+            cartTotal += 11.00;
+        } else if (view == findViewById(R.id.mex)) {
+            addItem("Mexican Salad",12.20);
+            Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
+            cartTotal += 12.20;
+        }
+    }
+
+    public void checkout(View view) {
+
+        Intent i = new Intent(Tacos.this, Checkout.class);
+        Bundle bundle = new Bundle();
+        bundle.putStringArrayList("Cart", cart);
+        i.putExtra("Total", cartTotal);
+        i.putExtra("Quantity", quantity);
+        i.putExtras(bundle);
+        startActivity(i);
+
     }
 
     //function to create the options/overflow menu for the app bar
@@ -61,4 +140,5 @@ public class Tacos extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

@@ -62,9 +62,10 @@
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/cheese"
+            android:id="@+id/cheesequesadilla"
             android:layout_weight="1"
             android:text="@string/add5"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -82,9 +83,10 @@
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/pepperoni"
+            android:id="@+id/tacos"
             android:layout_weight="1"
             android:text="@string/add5"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -126,9 +128,10 @@
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/popcornC"
+            android:id="@+id/combo"
             android:layout_weight="1"
             android:text="@string/add3"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -147,9 +150,10 @@
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/breadsticks"
+            android:id="@+id/cheeseroll"
             android:layout_weight="1"
             android:text="@string/add"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -191,9 +195,10 @@
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/coke"
+            android:id="@+id/ts"
             android:layout_weight="1"
             android:text="@string/add"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -212,9 +217,10 @@
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/sprite"
+            android:id="@+id/mex"
             android:layout_weight="1"
             android:text="@string/add"
+            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
