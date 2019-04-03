@@ -2,28 +2,31 @@ package com.example.bullrunmarketapplication.Model;
 
 public class User {
 
-    private String username;
-    private String password;
+    private String Username;
+    private String Password;
+
+    public User() {}
 
     public User(String username, String password){
-        this.username = username;
-        this.password = password;
+        this.Username = username;
+        this.Password = password;
     }
 
     public String getUsername() {
-        return username;
+        return Username;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.Username = username;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
     public void setPassword(){
-        this.password = password;
+        this.Password = Password;
     }
+
 }
 
