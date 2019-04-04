@@ -14,46 +14,31 @@
 
     <TextView
         android:id="@+id/TextViewSubtotal"
-        android:layout_width="398dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="9dp"
-        android:text="@string/total"
-        android:textColor="@android:color/holo_orange_dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextView01" />
-
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dip"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Shopping Cart"
-        android:textColor="#000000"
-        android:textSize="24dip"
-        android:textStyle="normal|bold"
-        app:layout_constraintEnd_toEndOf="@+id/TextViewSubtotal"
-        app:layout_constraintStart_toStartOf="@+id/appBar"
-        app:layout_constraintTop_toBottomOf="@+id/appBar" />
+        android:visibility="visible"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@+id/ListViewCatalog"
+        tools:layout_editor_absoluteX="0dp" />
 
     <ListView
         android:id="@+id/ListViewCatalog"
-        android:layout_width="match_parent"
-        android:layout_height="400sp"
+        android:layout_width="407dp"
+        android:layout_height="316dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/purchaseButton"
+        android:focusable="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar"
+        tools:ignore="KeyboardInaccessibleWidget" />
 
     <Button
         android:id="@+id/purchaseButton"
@@ -68,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBar"
-        app:layout_constraintVertical_bias="0.986" />
+        app:layout_constraintTop_toBottomOf="@+id/TextViewSubtotal"
+        app:layout_constraintVertical_bias="0.342" />
 
 </android.support.constraint.ConstraintLayout>

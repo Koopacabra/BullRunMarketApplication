@@ -74,7 +74,6 @@
     <string name="grilled_salad">Grilled Chicken Cesear Salad ($11.25)</string>
     <string name="oyster">Oyster Mushroom Salad (MP)</string>
     <string name="total">Subtotal:</string>
-    <string name="checkout">Checkout</string>
 
     //Ricos Tacos
     <string name="taco_menu">Rico\'s Tacos</string>
@@ -102,6 +101,7 @@
     <string name="Trucks">Trucks</string>
     <string name="title_activity_truck_login">TruckLogin</string>
     <string name="customerQ">Already a Customer?</string>
+    <string name="checkout">Checkout</string>
 
 
 </resources>

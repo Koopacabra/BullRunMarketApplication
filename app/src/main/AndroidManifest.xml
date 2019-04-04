@@ -83,7 +83,8 @@
             android:name=".PaymentProcessing"
             android:theme="@style/AppTheme.PurchasePopUp" />
         <activity
-            android:name=".Checkout" />
+            android:name=".Checkout"
+            android:label="@string/checkout"/>
         <activity
             android:name=".About" />
         <activity
