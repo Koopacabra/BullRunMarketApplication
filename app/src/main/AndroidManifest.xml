@@ -61,7 +61,7 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PizzaTruck_OrdersOpen"
-            android:label="@string/title_activity_truck_interface"
+            android:label="@string/pizzaOpen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Tacos"
