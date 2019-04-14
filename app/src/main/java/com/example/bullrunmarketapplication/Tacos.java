@@ -26,12 +26,14 @@ public class Tacos extends AppCompatActivity {
     public static int quantity = 0;
 
     private CartItemRepository cartItemRepository;
+    String truck_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tacos);
 
+        truck_id =  getIntent().getStringExtra("truck_id");
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
@@ -51,6 +53,9 @@ public class Tacos extends AppCompatActivity {
         CartItem item  = new CartItem();
         item.setName(name);
         item.setAmount(amount);
+        item.setId(4);
+        item.setTruck_id(truck_id);
+        System.out.println(item.toString());
         cartItemRepository.saveCartItem(item);
     }
 

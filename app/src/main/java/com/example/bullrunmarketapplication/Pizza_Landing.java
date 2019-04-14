@@ -21,16 +21,19 @@ public class Pizza_Landing extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
 
+        final String truck_id =  getIntent().getStringExtra("truck_id");
+
         button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openpizzatime();
+                openpizzatime(truck_id);
             }
         });
     }
-    public void openpizzatime() {
+    public void openpizzatime(String truck_id) {
         Intent intent = new Intent(this, Pizza.class);
+        intent.putExtra("truck_id", truck_id);
         startActivity(intent);
     }
 

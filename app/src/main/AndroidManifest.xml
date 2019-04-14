@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name=".TruckSelection"
+            android:name=".SelectionScreen"
             android:label="@string/title_activity_truck_selection"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -30,7 +30,12 @@
         <activity
             android:name=".DelightTruck_OrdersOpen"
             android:label="@string/delightOpen"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+
+        </activity>
+
         <activity
             android:name=".Italian"
             android:label="@string/italian"
@@ -46,7 +51,10 @@
         <activity
             android:name=".ItalianTruck_OrdersOpen"
             android:label="@string/italianOpen"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
         <activity
             android:name=".Pizza"
             android:label="@string/pizza"
@@ -62,7 +70,9 @@
         <activity
             android:name=".PizzaTruck_OrdersOpen"
             android:label="@string/title_activity_truck_interface"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+
+        </activity>
         <activity
             android:name=".Tacos"
             android:label="@string/tacos"
@@ -78,7 +88,9 @@
         <activity
             android:name=".TacosTruck_OrdersOpen"
             android:label="@string/tacosOpen"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <activity
             android:name=".PaymentProcessing"
             android:theme="@style/AppTheme.PurchasePopUp" />
@@ -99,12 +111,13 @@
             android:name=".CustSignUp"
             android:label="@string/title_activity_cust_sign_up"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SelectionScreen">
+        <activity android:name=".TruckSelection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

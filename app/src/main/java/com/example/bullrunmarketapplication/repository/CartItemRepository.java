@@ -47,4 +47,9 @@ public class CartItemRepository {
     public LiveData<List<CartItem>> getCartItem (){
         return appDatabase.cartItemDao().getAllCartItems();
     }
+
+    public  LiveData<List<CartItem>> getTruckItems(String truck_id){
+        return appDatabase.cartItemDao().getTruckItems(truck_id);
+    }
+
 }

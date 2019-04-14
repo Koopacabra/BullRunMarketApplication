@@ -23,4 +23,7 @@ public interface CartItemDao {
      */
     @Insert
     void insertCartItem(CartItem item);
+
+    @Query("SELECT * FROM cart WHERE truck_id = :truck_id LIMIT 10")
+    LiveData<List<CartItem>> getTruckItems(String truck_id);
 }
