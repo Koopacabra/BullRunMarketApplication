@@ -95,13 +95,14 @@
     <string name="pizzaClosed">Pizza Closed Orders</string>
     <string name="italianOpen">Italian Open Orders</string>
     <string name="delightOpen">Hyderabadi Open Orders</string>
-    <string name="title_activity_cust_sign_up">CustSignUp</string>
-    <string name="title_activity_cust_login">CustLogin</string>
+    <string name="title_activity_cust_sign_up">Customer SignUp</string>
+    <string name="title_activity_cust_login">Customer Login</string>
     <string name="Customers">Customers</string>
     <string name="Trucks">Trucks</string>
-    <string name="title_activity_truck_login">TruckLogin</string>
+    <string name="title_activity_truck_login">Food Truck Login</string>
     <string name="customerQ">Already a Customer?</string>
     <string name="checkout">Checkout</string>
+    <string name="pizzaOpen">Pizza Open Orders</string>
 
 
 </resources>

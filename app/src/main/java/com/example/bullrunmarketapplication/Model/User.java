@@ -24,8 +24,8 @@ public class User {
         return Password;
     }
 
-    public void setPassword(){
-        this.Password = Password;
+    public void setPassword(String password){
+        this.Password = password;
     }
 
 }

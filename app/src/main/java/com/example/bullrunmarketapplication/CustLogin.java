@@ -59,12 +59,13 @@ public class CustLogin extends AppCompatActivity {
                 if (dataSnapshot.child(username).exists()){ //user
                     if(!username.isEmpty()){
                         User login = dataSnapshot.child(username).getValue(User.class);
+                        //asserting to avoid NullPointerException potential
+                        assert login != null;
                         if(login.getPassword() !=  null && login.getPassword().equals(password)){
                             Toast.makeText(CustLogin.this, "Login success!", Toast.LENGTH_SHORT).show();
 
                             Intent intent = new Intent(getApplicationContext(), TruckSelection.class);
                             startActivity(intent);
-
                         }
                         else{
                             Toast.makeText(CustLogin.this, "Wrong password!", Toast.LENGTH_SHORT).show();
