@@ -174,16 +174,16 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
 
         if(clazz.equals(Delight_Landing.class)){
             // Monday, Wed, Thursday, Fri, Sat
-            return (dayOfWeek == 1 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
+            return (dayOfWeek == 2 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
         } else if(clazz.equals(Italian_Landing.class)){
             // Mon, Tue, Thur, Fri, Sat
-            return (dayOfWeek == 1 || dayOfWeek == 3 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
+            return (dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
         } else if(clazz.equals(Pizza_Landing.class)){
             // Mon, Tue, Wed, Fri, Sat
-            return (dayOfWeek == 1 || dayOfWeek == 3 || dayOfWeek == 4 ||dayOfWeek == 6 || dayOfWeek == 7);
+            return (dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 4 ||dayOfWeek == 6 || dayOfWeek == 7);
         } else if(clazz.equals(Tacos_Landing.class)){
             // Tue, Wed, Thur, Fri, Sat
-            return (dayOfWeek == 1 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
+            return (dayOfWeek == 3 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
         }
         return false;
     }
