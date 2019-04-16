@@ -55,7 +55,7 @@ public class Delight extends AppCompatActivity {
         item.setAmount(amount);
         item.setId(2);
         item.setTruck_id(truck_id);
-        System.out.println(item.toString());
+       System.out.println(item.toString());
         cartItemRepository.saveCartItem(item);
     }
 
