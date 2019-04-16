@@ -76,12 +76,7 @@ public class Checkout extends AppCompatActivity {
         price_usdD = i.getDoubleExtra("Total",Delight.cartTotal);
         price_usdP = i.getDoubleExtra("Total",Pizza.cartTotal);
         price_usdT = i.getDoubleExtra("Total",Tacos.cartTotal);
-        priceView.setText(price.format(price_usdI));
-        priceView.setText(price.format(price_usdD));
-        priceView.setText(price.format(price_usdP));
-        priceView.setText(price.format(price_usdT));
-        //quantity = i.getIntExtra("Quantity", IOW.quantity);
-        //priceView.setText(price.format(price_usd));
+        priceView.setText(price.format(price_usdI + price_usdD + price_usdP + price_usdT));
 
         //linking the intent to open PaymentProcessing to the purchaseButton
         btnPurchase = findViewById(R.id.purchaseButton);
