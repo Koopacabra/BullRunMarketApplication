@@ -25,11 +25,14 @@ public class Delight extends AppCompatActivity {
     public static int quantity = 0;
 
     private CartItemRepository cartItemRepository;
+    String truck_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delight);
+
+        truck_id =  getIntent().getStringExtra("truck_id");
 
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
@@ -50,6 +53,9 @@ public class Delight extends AppCompatActivity {
         CartItem item  = new CartItem();
         item.setName(name);
         item.setAmount(amount);
+        item.setId(2);
+        item.setTruck_id(truck_id);
+        System.out.println(item.toString());
         cartItemRepository.saveCartItem(item);
     }
 

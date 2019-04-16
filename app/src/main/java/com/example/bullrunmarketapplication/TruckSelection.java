@@ -16,6 +16,12 @@ import java.util.Calendar;
 
 public class TruckSelection extends AppCompatActivity implements View.OnClickListener{
 
+    private String truck_id;
+    public  static  String DELIGHT = "truck_delight";
+    public  static  String ITALIAN = "truck_italian";
+    public  static  String PIZZA = "truck_pizza";
+    public  static  String TACOS = "truck_tacos";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,15 +130,21 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
         Class activityToStart = null;
         switch (v.getId()){
             case R.id.cardImage_delight:
+                truck_id = DELIGHT;
                 activityToStart = Delight_Landing.class;
                 break;
             case R.id.cardImage_italian:
+
+                truck_id = ITALIAN;
                 activityToStart = Italian_Landing.class;
                 break;
             case R.id.cardImage_pizza:
+
+                truck_id = PIZZA;
                 activityToStart = Pizza_Landing.class;
                 break;
             case R.id.cardImage_tacos:
+                truck_id = TACOS;
                 activityToStart = Tacos_Landing.class;
                 break;
         }
@@ -140,7 +152,9 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
         //if else to navigate to landing page if it is available based on the method below
         if(activityToStart!=null){
             if(isAvailable(activityToStart)) {
-                startActivity(new Intent(TruckSelection.this, activityToStart));
+                Intent  intent = new Intent(TruckSelection.this, activityToStart);
+                intent.putExtra("truck_id", truck_id );
+                startActivity(intent);
             } else {
                 truckNotAvailableToast();
             }
@@ -156,6 +170,7 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
         if(dayOfWeek == 1){
             return false;
         }
+
 
         if(clazz.equals(Delight_Landing.class)){
             // Monday, Wed, Thursday, Fri, Sat

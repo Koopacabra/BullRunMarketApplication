@@ -21,7 +21,7 @@ public class CartItemRepository {
 
     public void saveCartItem(final CartItem item){
 
-         class Task extends AsyncTask<Void, Void, Void>{
+        class Task extends AsyncTask<Void, Void, Void>{
 
             @Override
             protected void onPreExecute() {
@@ -47,4 +47,9 @@ public class CartItemRepository {
     public LiveData<List<CartItem>> getCartItem (){
         return appDatabase.cartItemDao().getAllCartItems();
     }
+
+    public  LiveData<List<CartItem>> getTruckItems(String truck_id){
+        return appDatabase.cartItemDao().getTruckItems(truck_id);
+    }
+
 }

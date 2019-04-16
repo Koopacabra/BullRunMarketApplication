@@ -1,15 +1,26 @@
 package com.example.bullrunmarketapplication;
 
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.Observer;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
-public class DelightTruck_OrdersOpen extends AppCompatActivity {
+import com.example.bullrunmarketapplication.repository.CartItemRepository;
+import com.example.bullrunmarketapplication.storage.CartItem;
 
+import java.util.List;
+
+
+public class DelightTruck_OrdersOpen extends AppCompatActivity {
+    private CartItemRepository cartItemRepository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,10 +30,26 @@ public class DelightTruck_OrdersOpen extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
 
-       /* //listView for open orders
-        String[] openOrders = {"Order 1", "Order 2", "Order 3", "Order 4", "Order 5"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getListView[].getContext(), android.R.layout.simple_expandable_list_item_1, openOrders);
-        getListView().setAdapter(adapter);*/
+
+        cartItemRepository  = new CartItemRepository(getApplicationContext());
+        final LiveData<List<CartItem>> items = cartItemRepository.getTruckItems("truck_delight");
+        System.out.println("Deleight item " + items.getValue());
+
+        items.observe(this, new Observer<List<CartItem>>() {
+            @Override
+            public void onChanged(@Nullable List<CartItem> cartItems) {
+
+                //listView for open orders
+                ListView delightListView =  findViewById(R.id.delight_orders);
+                CartItemAdapter cartItemAdapter = new CartItemAdapter(getApplicationContext(), cartItems);
+                delightListView.setAdapter(cartItemAdapter);
+
+                //added != null statement to avoid possible nullPointerException from the println; 3/28CC
+                assert cartItems != null;
+                System.out.println(cartItems.toString());
+            }
+        });
+
     }
 
     //function to create the options/overflow menu for the app bar

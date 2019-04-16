@@ -29,7 +29,7 @@ public class Checkout extends AppCompatActivity {
 
 
     //initialize views to display cart content
-    TextView priceView1, priceView2, priceView3, priceView4;
+    TextView priceView, priceView2, priceView3, priceView4;
     ListView listView;
     //ArrayList<String> cart_choices;
     Double price_usdI;
@@ -50,10 +50,7 @@ public class Checkout extends AppCompatActivity {
         cartItemRepository  = new  CartItemRepository(getApplicationContext());
 
         listView = findViewById(R.id.ListViewCatalog);
-        priceView1 = findViewById(R.id.TextViewSubtotal);
-        priceView2 = findViewById(R.id.TextViewSubtotal);
-        priceView3 = findViewById(R.id.TextViewSubtotal);
-        priceView4 = findViewById(R.id.TextViewSubtotal);
+        priceView = findViewById(R.id.TextViewSubtotal);
         //quantityView = (TextView) findViewById(R.id.cart_product_quantity);
 
         LiveData<List<CartItem>> items = cartItemRepository.getCartItem();
@@ -79,10 +76,10 @@ public class Checkout extends AppCompatActivity {
         price_usdD = i.getDoubleExtra("Total",Delight.cartTotal);
         price_usdP = i.getDoubleExtra("Total",Pizza.cartTotal);
         price_usdT = i.getDoubleExtra("Total",Tacos.cartTotal);
-        priceView1.setText(price.format(price_usdI));
-        priceView2.setText(price.format(price_usdD));
-        priceView3.setText(price.format(price_usdP));
-        priceView4.setText(price.format(price_usdT));
+        priceView.setText(price.format(price_usdI));
+        priceView.setText(price.format(price_usdD));
+        priceView.setText(price.format(price_usdP));
+        priceView.setText(price.format(price_usdT));
         //quantity = i.getIntExtra("Quantity", IOW.quantity);
         //priceView.setText(price.format(price_usd));
 
@@ -93,6 +90,7 @@ public class Checkout extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pop = new Intent(getApplicationContext(), PaymentProcessing.class);
                 startActivity(pop);
+
             }
         });
 
