@@ -64,7 +64,6 @@
             android:id="@+id/biry"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -129,7 +128,6 @@
             android:id="@+id/jelebi"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -151,7 +149,6 @@
             android:id="@+id/gulab"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -196,7 +193,6 @@
             android:id="@+id/thumbs"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -218,7 +214,6 @@
             android:id="@+id/lassi"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

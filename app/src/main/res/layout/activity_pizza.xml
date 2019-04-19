@@ -65,7 +65,6 @@
             android:id="@+id/pepperoni"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -86,7 +85,6 @@
             android:id="@+id/cheese"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -131,7 +129,6 @@
             android:id="@+id/spicyWings"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -153,7 +150,6 @@
             android:id="@+id/breadsticks"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -198,7 +194,6 @@
             android:id="@+id/coke"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -220,7 +215,6 @@
             android:id="@+id/sprite"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

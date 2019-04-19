@@ -55,17 +55,16 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="@string/cheeseQuesadilla"
+            android:text="@string/beefTaco"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/cheesequesadilla"
+            android:id="@+id/beefTaco"
             android:layout_weight="1"
             android:text="@string/add5"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -76,17 +75,16 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="@string/rolledTacos"
+            android:text="@string/chickenTaco"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/tacos"
+            android:id="@+id/chickenTaco"
             android:layout_weight="1"
             android:text="@string/add5"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -121,7 +119,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="@string/combo"
+            android:text="@string/flautas"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -131,7 +129,6 @@
             android:id="@+id/combo"
             android:layout_weight="1"
             android:text="@string/add3"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -143,17 +140,16 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="@string/cheeseRoll"
+            android:text="@string/cheeseQuesadilla"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/cheeseroll"
+            android:id="@+id/cheeseQuesadilla"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -171,7 +167,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="@string/salad2"
+            android:text="@string/tacosDrinks"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="0dp"
@@ -188,17 +184,16 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="@string/salad"
+            android:text="@string/horchata"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
         <Button
-            android:id="@+id/ts"
+            android:id="@+id/horchata"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -210,7 +205,7 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="@string/mexicanSalad"
+            android:text="@string/jarritos"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -220,7 +215,6 @@
             android:id="@+id/mex"
             android:layout_weight="1"
             android:text="@string/add"
-            android:onClick="add_to_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

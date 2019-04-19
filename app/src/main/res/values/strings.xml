@@ -43,14 +43,14 @@
     <string name="gulab_jamun">Gulab Jamun ($5.00)</string>
     <string name="drinks">Drinks</string>
     <string name="thums_up">Thums Up ($2.00)</string>
-    <string name="mango_lassi">Mango Lassi ($2.00)</string>
+    <string name="mango_lassi">Mango Lassi ($3.00)</string>
     <string name="action_register">Register</string>
     <string name="welcome">Welcome!</string>
     <string name="UserName">UserName</string>
     <string name="brmlogo_mainScreen">brm logo main screen</string>
     <string name="pepperoni_pizza">Pepperoni Pizza ($10.00)</string>
-    <string name="cheese_pizza">Cheese Pizza ($10.00)</string>
-    <string name="spicy_wings">Spicy Wings ($5.00)</string>
+    <string name="cheese_pizza">Cheese Pizza ($9.00)</string>
+    <string name="spicy_wings">Spicy Wings ($6.00)</string>
     <string name="breadsticks">Breadsticks ($5.00)</string>
     <string name="coca_cola">Coca-Cola ($2.00)</string>
     <string name="sprite">Sprite ($2.00)</string>
@@ -62,27 +62,26 @@
     //Italian on Wheels Strings
     <string name="italian_menu">Italian on Wheels Menu</string>
     <string name="entrees">Entrees</string>
-    <string name="shells">Stuffed Shells ($12.99)</string>
+    <string name="shells">Stuffed Shells ($9.00)</string>
     <string name="add2">Add</string>
-    <string name="authenticPizza">Pizza Napoletana ($12.50)</string>
     <string name="add3">Add</string>
-    <string name="spaghetti">Spaghetti and Meatballs ($15)</string>
+    <string name="spaghetti">Spaghetti &amp; Meatballs ($10.00)</string>
     <string name="apps2">Appetizers</string>
-    <string name="knots">Garlic Knots (12.50)</string>
-    <string name="mozz">Mozzerella Sticks ($12.50)</string>
-    <string name="salad2">Salads</string>
-    <string name="grilled_salad">Grilled Chicken Cesear Salad ($11.25)</string>
-    <string name="oyster">Oyster Mushroom Salad (MP)</string>
+    <string name="knots">Garlic Knots ($6.00)</string>
+    <string name="oysterSalad">Oyster &amp; Mushroom Salad ($7.00)</string>
+    <string name="italianDrinks">Drinks</string>
+    <string name="virginLim">Virgin Limoncello ($3.50)</string>
+    <string name="icedTea">Iced Tea ($2.00)</string>
     <string name="total">Subtotal:</string>
 
     //Ricos Tacos
     <string name="taco_menu">Rico\'s Tacos</string>
     <string name="entrees2">Entrees</string>
-    <string name="cheeseQuesadilla">Cheese Quesadilla ($8.50)</string>
+    <string name="cheeseQuesadilla">Cheese Quesadilla ($7.00)</string>
     <string name="add5">Add</string>
     <string name="rolledTacos">Rolled Tacos ($14.98)</string>
     <string name="add4">Add</string>
-    <string name="combo">Combo Platter ($10.50)</string>
+    <string name="flautas">Flautas ($8.00)</string>
     <string name="apps3">Appetizers</string>
     <string name="churro">Churro ($5.00)</string>
     <string name="cheeseRoll">Cheese Roll ($4.50)</string>
@@ -103,6 +102,11 @@
     <string name="customerQ">Already a Customer?</string>
     <string name="checkout">Checkout</string>
     <string name="pizzaOpen">Pizza Open Orders</string>
+    <string name="beefTaco">Beef Taco ($1.50)</string>
+    <string name="chickenTaco">Chicken Taco ($1.50)</string>
+    <string name="tacosDrinks">Drinks</string>
+    <string name="horchata">Horchata ($3.50)</string>
+    <string name="jarritos">Jarritos-Orange ($2.50)</string>
 
 
 </resources>
