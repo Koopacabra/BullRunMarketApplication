@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Pizza_Landing extends AppCompatActivity {
+
     private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,19 +23,17 @@ public class Pizza_Landing extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
 
-        final String truck_id =  getIntent().getStringExtra("truck_id");
-
         button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openpizzatime(truck_id);
+                openpizzatime();
             }
         });
     }
-    public void openpizzatime(String truck_id) {
+
+    public void openpizzatime() {
         Intent intent = new Intent(this, Pizza.class);
-        intent.putExtra("truck_id", truck_id);
         startActivity(intent);
     }
 

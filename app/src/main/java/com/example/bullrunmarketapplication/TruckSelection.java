@@ -16,12 +16,6 @@ import java.util.Calendar;
 
 public class TruckSelection extends AppCompatActivity implements View.OnClickListener{
 
-    private String truck_id;
-    public  static  String DELIGHT = "truck_delight";
-    public  static  String ITALIAN = "truck_italian";
-    public  static  String PIZZA = "truck_pizza";
-    public  static  String TACOS = "truck_tacos";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +36,7 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
             cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.darker_gray));
         }
 
-        //delight image button intent to navigate to pizza time landing page
+        //pizza image button intent to navigate to pizza time landing page
         view = findViewById(R.id.cardImage_pizza);
         view.setOnClickListener(this);
         cardView = findViewById(R.id.cardView_pizza);
@@ -55,7 +49,7 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
             cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.darker_gray));
         }
 
-        //delight image button intent to navigate to italian on wheels landing page
+        //italian image button intent to navigate to italian on wheels landing page
         view = findViewById(R.id.cardImage_italian);
         view.setOnClickListener(this);
         cardView = findViewById(R.id.cardView_italian);
@@ -68,7 +62,7 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
             cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.darker_gray));
         }
 
-        //delight image button intent to navigate to ricos tacos landing page
+        //tacos image button intent to navigate to ricos tacos landing page
         view = findViewById(R.id.cardImage_tacos);
         view.setOnClickListener(this);
         cardView = findViewById(R.id.cardView_tacos);
@@ -130,21 +124,15 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
         Class activityToStart = null;
         switch (v.getId()){
             case R.id.cardImage_delight:
-                truck_id = DELIGHT;
                 activityToStart = Delight_Landing.class;
                 break;
             case R.id.cardImage_italian:
-
-                truck_id = ITALIAN;
                 activityToStart = Italian_Landing.class;
                 break;
             case R.id.cardImage_pizza:
-
-                truck_id = PIZZA;
                 activityToStart = Pizza_Landing.class;
                 break;
             case R.id.cardImage_tacos:
-                truck_id = TACOS;
                 activityToStart = Tacos_Landing.class;
                 break;
         }
@@ -152,9 +140,7 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
         //if else to navigate to landing page if it is available based on the method below
         if(activityToStart!=null){
             if(isAvailable(activityToStart)) {
-                Intent  intent = new Intent(TruckSelection.this, activityToStart);
-                intent.putExtra("truck_id", truck_id );
-                startActivity(intent);
+                startActivity(new Intent(TruckSelection.this, activityToStart));
             } else {
                 truckNotAvailableToast();
             }
@@ -171,16 +157,19 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
             return false;
         }
 
-
+        //delight case
         if(clazz.equals(Delight_Landing.class)){
             // Monday, Wed, Thursday, Fri, Sat
             return (dayOfWeek == 2 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
+        //italian case
         } else if(clazz.equals(Italian_Landing.class)){
             // Mon, Tue, Thur, Fri, Sat
             return (dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
+        //pizza case
         } else if(clazz.equals(Pizza_Landing.class)){
             // Mon, Tue, Wed, Fri, Sat
             return (dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 4 ||dayOfWeek == 6 || dayOfWeek == 7);
+        //tacos case
         } else if(clazz.equals(Tacos_Landing.class)){
             // Tue, Wed, Thur, Fri, Sat
             return (dayOfWeek == 3 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);

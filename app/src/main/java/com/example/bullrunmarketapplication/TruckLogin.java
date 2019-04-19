@@ -22,10 +22,6 @@ import com.google.firebase.database.ValueEventListener;
 public class TruckLogin extends AppCompatActivity {
 
     private static final String TAG = TruckLogin.class.getSimpleName();
-/*
-    //Firebase
-    FirebaseDatabase database;
-    DatabaseReference users;*/
 
     EditText edtUsername, edtPassword;
     Button btnSignIn;
@@ -35,12 +31,8 @@ public class TruckLogin extends AppCompatActivity {
         super.onCreate(savedInstances);
         setContentView(R.layout.activity_cust_login);
 
-        //Firebase
-
+        //Firebase initialization
         FirebaseApp.initializeApp(this);
-
-       /* database = FirebaseDatabase.getInstance();
-        users = database.getReference("User");*/
 
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
@@ -50,8 +42,6 @@ public class TruckLogin extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*signIn(edtUsername.getText().toString(),
-                        edtPassword.getText().toString());*/
 
                 signInReadUser(edtUsername.getText().toString(),
                         edtPassword.getText().toString());
@@ -114,51 +104,4 @@ public class TruckLogin extends AppCompatActivity {
             }
         });
     }
-
-    /*private void signIn(final String username, final String password) {
-        users.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child(username).exists()) { //user
-                    if (!username.isEmpty()) {
-                        User login = dataSnapshot.child(username).getValue(User.class);
-                        if (login.getPassword() != null && login.getPassword().equals(password) ) {
-
-                            Toast.makeText(TruckLogin.this, "Login success!", Toast.LENGTH_SHORT).show();
-
-                            if (username.equals("Ricos Tacos")) {
-                                Intent intent = new Intent(getApplicationContext(), TacosTruck_OrdersOpen.class);
-                                startActivity(intent);
-                            }
-
-                            if (username.equals("Italian on Wheels")) {
-                                Intent intent = new Intent(getApplicationContext(), ItalianTruck_OrdersOpen.class);
-                                startActivity(intent);
-                            }
-
-                            if (username.equals("Pizza Time")) {
-                                Intent intent = new Intent(getApplicationContext(), PizzaTruck_OrdersOpen.class);
-                                startActivity(intent);
-                            }
-
-                            if (username.equals("Hyderabadi Delight")) {
-                                Intent intent = new Intent(getApplicationContext(), DelightTruck_OrdersOpen.class);
-                                startActivity(intent);
-                            }
-
-                        } else {
-                            Toast.makeText(TruckLogin.this, "Wrong password!", Toast.LENGTH_SHORT).show();
-                        }
-                    } else
-                        Toast.makeText(TruckLogin.this, "Username not registered!", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                //custom code
-                Log.e("Signin", "ERROR!:" + databaseError.getMessage());
-            }
-        });
-    }*/
 }

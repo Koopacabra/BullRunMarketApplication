@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Italian_Landing extends AppCompatActivity {
+
     private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

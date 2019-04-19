@@ -18,11 +18,6 @@ public class DelightTruck_OrdersClosed extends AppCompatActivity {
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
-
-       /* //listView for open orders
-        String[] openOrders = {"Order 1", "Order 2", "Order 3", "Order 4", "Order 5"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getListView[].getContext(), android.R.layout.simple_expandable_list_item_1, openOrders);
-        getListView().setAdapter(adapter);*/
     }
 
     //function to create the options/overflow menu for the app bar

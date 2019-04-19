@@ -1,24 +1,15 @@
 package com.example.bullrunmarketapplication;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.Observer;
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.bullrunmarketapplication.repository.CartItemRepository;
-import com.example.bullrunmarketapplication.storage.CartItem;
-
-import java.util.List;
-
 public class TacosTruck_OrdersOpen extends AppCompatActivity {
-    private CartItemRepository cartItemRepository;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,26 +18,8 @@ public class TacosTruck_OrdersOpen extends AppCompatActivity {
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
-
-        cartItemRepository  = new CartItemRepository(getApplicationContext());
-        final LiveData<List<CartItem>> items = cartItemRepository.getTruckItems("truck_tacos");
-        System.out.println("Rico Tacos item " + items.getValue());
-
-        items.observe(this, new Observer<List<CartItem>>() {
-            @Override
-            public void onChanged(@Nullable List<CartItem> cartItems) {
-
-                //listView for open orders
-                ListView tacoListView =  findViewById(R.id.tacos_orders);
-                CartItemAdapter cartItemAdapter = new CartItemAdapter(getApplicationContext(), cartItems);
-                tacoListView.setAdapter(cartItemAdapter);
-
-                //added != null statement to avoid possible nullPointerException from the println; 3/28CC
-                assert cartItems != null;
-                System.out.println(cartItems.toString());
-            }
-        });
     }
+
 
     //function to create the options/overflow menu for the app bar
     @Override
@@ -54,6 +27,7 @@ public class TacosTruck_OrdersOpen extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_options_button_orders_closed, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
 
     /*function to determine what happens when an item is selected
     from the options menu*/

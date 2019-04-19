@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Tacos_Landing extends AppCompatActivity {
+
     private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,19 +23,17 @@ public class Tacos_Landing extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
 
-        final String truck_id =  getIntent().getStringExtra("truck_id");
-
         button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openricos(truck_id);
+                openricos();
             }
         });
     }
-    public void openricos(String truck_id) {
+
+    public void openricos() {
         Intent intent = new Intent(this, Tacos.class);
-        intent.putExtra("truck_id", truck_id);
         startActivity(intent);
     }
 

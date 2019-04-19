@@ -1,87 +1,23 @@
 package com.example.bullrunmarketapplication;
-
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.Observer;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.bullrunmarketapplication.repository.CartItemRepository;
-import com.example.bullrunmarketapplication.storage.CartItem;
-
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Checkout extends AppCompatActivity {
 
     //initializing purchase button which will activate the PaymentProcessing popup
     Button btnPurchase;
 
-
-    //initialize views to display cart content
-    TextView priceView, priceView2, priceView3, priceView4;
-    ListView listView;
-    //ArrayList<String> cart_choices;
-    Double price_usdI;
-    Double price_usdP;
-    Double price_usdT;
-    Double price_usdD;
-    //int quantity;
-    NumberFormat price = NumberFormat.getCurrencyInstance();
-
-    private CartItemRepository cartItemRepository;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
-
-        cartItemRepository  = new  CartItemRepository(getApplicationContext());
-
-        listView = findViewById(R.id.ListViewCatalog);
-        priceView = findViewById(R.id.TextViewSubtotal);
-        //quantityView = (TextView) findViewById(R.id.cart_product_quantity);
-
-        LiveData<List<CartItem>> items = cartItemRepository.getCartItem();
-
-
-        items.observe(this, new Observer<List<CartItem>>() {
-            @Override
-            public void onChanged(@Nullable List<CartItem> cartItems) {
-
-                CartItemAdapter adapter = new CartItemAdapter(getApplicationContext(), cartItems);
-                adapter.notifyDataSetChanged();
-                listView.setAdapter(adapter);
-
-                //added != null statement to avoid possible nullPointerException from the println; 3/28CC
-                assert cartItems != null;
-                System.out.println(cartItems.toString());
-            }
-        });
-
-
-        Intent i = getIntent();
-        price_usdI = i.getDoubleExtra("Total",Italian.cartTotal);
-        price_usdD = i.getDoubleExtra("Total",Delight.cartTotal);
-        price_usdP = i.getDoubleExtra("Total",Pizza.cartTotal);
-        price_usdT = i.getDoubleExtra("Total",Tacos.cartTotal);
-        priceView.setText(price.format(price_usdI));
-        priceView.setText(price.format(price_usdD));
-        priceView.setText(price.format(price_usdP));
-        priceView.setText(price.format(price_usdT));
-        //quantity = i.getIntExtra("Quantity", IOW.quantity);
-        //priceView.setText(price.format(price_usd));
 
         //linking the intent to open PaymentProcessing to the purchaseButton
         btnPurchase = findViewById(R.id.purchaseButton);
@@ -90,7 +26,6 @@ public class Checkout extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pop = new Intent(getApplicationContext(), PaymentProcessing.class);
                 startActivity(pop);
-
             }
         });
 
