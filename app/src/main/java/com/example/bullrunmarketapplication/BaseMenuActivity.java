@@ -1,41 +1,44 @@
 package com.example.bullrunmarketapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-public class Pizza_Landing extends AppCompatActivity {
+import com.example.bullrunmarketapplication.Model.FoodItem;
 
-    private Button button;
+import java.util.ArrayList;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pizza_landing);
+//ignoring Lint warnings
+@SuppressLint("Registered")
+//truckId ranges from 1-4, defaults to 1 unless declared otherwise.  Adds the menu items to the checkout list
+public class BaseMenuActivity extends AppCompatActivity {
+    protected int truckId = 1;
+    protected ArrayList<FoodItem> itemsToCheckout =new ArrayList<>();
 
-        //casting toolbar as an actionbar
-        Toolbar toolbar = findViewById(R.id.appBar);
-        setSupportActionBar(toolbar);
-
-        button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openpizzatime();
-            }
-        });
+    //toasts the name of each item as they're added and sends it to checkout including its details
+    void addFoodToCart(String name, double price){
+        Toast.makeText(this, name+" added to cart", Toast.LENGTH_SHORT).show();
+        FoodItem foodItem = new FoodItem( name, price);
+        int index = itemsToCheckout.indexOf(foodItem);
+        //forces the checkout quantity to be increased as they're added because the if is N/A
+        if(index == -1){
+            itemsToCheckout.add(foodItem);
+        } else {
+            itemsToCheckout.get(index).quantity++;
+        }
     }
 
-    public void openpizzatime() {
-        Intent intent = new Intent(this, Pizza.class);
-        startActivity(intent);
-        finish();
+    //retains code to be used for truckID
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1234 && resultCode == RESULT_OK) {
+            finish();
+        }
     }
 
     //function to create the options/overflow menu for the app bar
@@ -72,11 +75,14 @@ public class Pizza_Landing extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Does everything look correct?", Toast.LENGTH_SHORT).show();
                 //intent to navigate to Checkout activity
                 Intent checkout = new Intent(this, Checkout.class);
-                startActivity(checkout);
+                checkout.putParcelableArrayListExtra("list",itemsToCheckout);
+                checkout.putExtra("truck",truckId);
+                startActivityForResult(checkout,1234);
             default:
                 //unknown error action TBD
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }

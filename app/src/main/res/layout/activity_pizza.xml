@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Pizza"
-    tools:showIn="@layout/activity_pizza"
-    android:orientation="vertical">
+    tools:showIn="@layout/activity_pizza">
 
     <!--including the appBar toolbar at the top of the activity-->
     <include
@@ -30,193 +30,198 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="10dp"
-        android:weightSum="2"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="30dp">
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
 
         <TextView
-            android:layout_weight="1"
-            android:text="@string/main_course"
-            android:textSize="20sp"
-            android:textColor="#0a0a0a"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            />
+            android:layout_weight="1"
+            android:text="@string/main_course"
+            android:textColor="#0a0a0a"
+            android:textSize="20sp" />
     </LinearLayout>
+
     <LinearLayout
-        android:weightSum="2"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/pepperoni_pizza"
-            android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/pepperoni"
-            android:layout_weight="1"
-            android:text="@string/add"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-    <LinearLayout
-        android:weightSum="2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <TextView
-            android:layout_weight="1"
-            android:text="@string/cheese_pizza"
-            android:textSize="20sp"
-            android:textColor="#0a0a0a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="@string/add" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/cheese_pizza"
+            android:textColor="#0a0a0a"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/cheese"
-            android:layout_weight="1"
-            android:text="@string/add"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="@string/add" />
 
     </LinearLayout>
 
     <!-- Appetizers -->
 
     <LinearLayout
-        android:layout_marginTop="10dp"
-        android:weightSum="2"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="30dp">
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
 
         <TextView
-            android:layout_weight="1"
-            android:text="@string/apps"
-            android:textSize="20sp"
-            android:textColor="#0a0a0a"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            />
+            android:layout_weight="1"
+            android:text="@string/apps"
+            android:textColor="#0a0a0a"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:weightSum="2"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/spicy_wings"
-            android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/spicyWings"
-            android:layout_weight="1"
-            android:text="@string/add"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="@string/add" />
     </LinearLayout>
 
     <LinearLayout
-        android:weightSum="2"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:weightSum="2">
 
         <TextView
-            android:layout_weight="1"
-            android:text="@string/breadsticks"
-            android:textSize="20sp"
-            android:textColor="#0a0a0a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:layout_weight="1"
+            android:text="@string/breadsticks"
+            android:textColor="#0a0a0a"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/breadsticks"
-            android:layout_weight="1"
-            android:text="@string/add"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="@string/add" />
 
     </LinearLayout>
 
     <!-- Drinks -->
 
     <LinearLayout
-        android:layout_marginTop="10dp"
-        android:weightSum="2"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="30dp">
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
 
         <TextView
-            android:layout_weight="1"
-            android:text="@string/drinks"
-            android:textSize="20sp"
-            android:textColor="#0a0a0a"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            />
+            android:layout_weight="1"
+            android:text="@string/drinks"
+            android:textColor="#0a0a0a"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:weightSum="2"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/coca_cola"
-            android:textSize="20sp"
             android:textColor="#0a0a0a"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/coke"
-            android:layout_weight="1"
-            android:text="@string/add"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="@string/add" />
     </LinearLayout>
 
     <LinearLayout
-        android:weightSum="2"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:weightSum="2">
 
         <TextView
-            android:layout_weight="1"
-            android:text="@string/sprite"
-            android:textSize="20sp"
-            android:textColor="#0a0a0a"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:layout_weight="1"
+            android:text="@string/sprite"
+            android:textColor="#0a0a0a"
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/sprite"
-            android:layout_weight="1"
-            android:text="@string/add"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:text="@string/add" />
 
     </LinearLayout>
 </LinearLayout>

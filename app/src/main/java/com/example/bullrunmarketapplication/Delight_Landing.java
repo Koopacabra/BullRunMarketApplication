@@ -39,6 +39,7 @@ public class Delight_Landing extends AppCompatActivity {
         Intent intent = new Intent(this, Delight.class);
         intent.putExtra("truck_id", truck_id);
         startActivity(intent);
+        finish();
     }
 
     //function to create the options/overflow menu for the app bar

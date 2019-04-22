@@ -35,6 +35,7 @@ public class Tacos_Landing extends AppCompatActivity {
     public void openricos() {
         Intent intent = new Intent(this, Tacos.class);
         startActivity(intent);
+        finish();
     }
 
     //function to create the options/overflow menu for the app bar

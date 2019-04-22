@@ -22,7 +22,7 @@
     </style>
 
     <style name="AppTheme.PurchasePopUp">
-        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
 
