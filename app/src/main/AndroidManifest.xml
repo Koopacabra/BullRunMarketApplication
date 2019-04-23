@@ -15,11 +15,6 @@
             android:name=".TruckSelection"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Delight"
@@ -30,14 +25,6 @@
             android:label="@string/delight"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".DelightTruck_OrdersClosed"
-            android:label="@string/delightClosed"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".DelightTruck_OrdersOpen"
-            android:label="@string/delightOpen"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
             android:name=".Italian"
             android:label="@string/italian"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -45,14 +32,6 @@
             android:name=".Italian_Landing"
             android:label="@string/italian"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ItalianTruck_OrdersClosed"
-            android:label="@string/italianClosed"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".ItalianTruck_OrdersOpen"
-            android:label="@string/italianOpen"
-            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Pizza"
             android:label="@string/pizza"
@@ -62,12 +41,12 @@
             android:label="@string/pizza"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PizzaTruck_OrdersClosed"
-            android:label="@string/pizzaClosed"
+            android:name=".TruckOrdersClosed"
+            android:label="@string/closedOrders"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".PizzaTruck_OrdersOpen"
-            android:label="@string/title_activity_truck_interface"
+            android:name=".TruckOrders"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Tacos"
@@ -77,14 +56,6 @@
             android:name=".Tacos_Landing"
             android:label="@string/tacos"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".TacosTruck_OrdersClosed"
-            android:label="@string/tacosClosed"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".TacosTruck_OrdersOpen"
-            android:label="@string/tacosOpen"
-            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".PaymentProcessing"
             android:theme="@style/AppTheme.PurchasePopUp" />
@@ -107,7 +78,11 @@
             android:label="@string/title_activity_cust_sign_up"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SelectionScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

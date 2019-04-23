@@ -8,12 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class PizzaTruck_OrdersClosed extends AppCompatActivity {
+public class TruckOrdersClosed extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pizza_orders_closed);
+        setContentView(R.layout.activity_truck_orders_closed);
 
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
@@ -54,7 +54,7 @@ public class PizzaTruck_OrdersClosed extends AppCompatActivity {
                 //toast to float message going to Cart
                 Toast.makeText(getApplicationContext(), "These orders are open", Toast.LENGTH_SHORT).show();
                 //intent to navigate to Checkout activity
-                Intent openOrders = new Intent(this, PizzaTruck_OrdersOpen.class);
+                Intent openOrders = new Intent(this, TruckOrders.class);
                 startActivity(openOrders);
             default:
                 //unknown error action TBD

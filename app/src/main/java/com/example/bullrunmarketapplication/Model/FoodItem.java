@@ -42,7 +42,7 @@ public class FoodItem implements Parcelable {
     //records the item name
     @Override
     public boolean equals(Object obj) {
-        return name.equals(((FoodItem)obj).name);
+        return name.equals(((FoodItem) obj).name);
     }
 
     @Override
@@ -57,5 +57,9 @@ public class FoodItem implements Parcelable {
         dest.writeString(name);
         dest.writeDouble(price);
         dest.writeInt(quantity);
+    }
+
+    public Item toItem() {
+        return new Item(name, price, quantity);
     }
 }

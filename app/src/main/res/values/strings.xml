@@ -30,9 +30,8 @@
     <!--Landing/Submenu Strings -->
     <string name="pizza_motto">We take pride in making a perfect pizza and providing courteous and helpful service on-time, all the time! Every customer says, I\'ll be back! We are the employer of choice offering team members opportunities for growth, advancement, and rewarding careers in a fun, safe working environment.</string>
     <string name="make_order">Let\'s Eat!</string>
-    <string name="hyd_motto">Welcome to HyderabadiDelight, where you can experience pure delight with some Indian Cuisine</string>
-    <string name="iow_motto">Grandma\'s recipes you\'ll love and adore with Italian flavors that will take you to Sicily</string>
-    <string name="rico_motto">The best authentic Mexican cuisine the bay area has to offer</string>
+    <string name="hyd_motto">Welcome to HyderabadiDelight where you can experience pure delight with some Indian Cuisine.</string>
+    <string name="iow_motto">Grandma\'s recipes you\'ll love and adore with Italian flavors that will take you to Sicily.</string>
     <string name="menu">Menu</string>
     <string name="main_course">Main Course</string>
     <string name="chicken_biryani">Chicken Biryani ($10.00)</string>
@@ -108,6 +107,8 @@
     <string name="horchata">Horchata ($3.50)</string>
     <string name="jarritos">Jarritos-Orange ($2.50)</string>
     <string name="about">About</string>
+    <string name="tacosMotto">Mexican cuisine straight from the streets of Tijuana.  We have everything from tacos to horchata!</string>
+    <string name="closedOrders">Closed Orders</string>
 
 
 </resources>

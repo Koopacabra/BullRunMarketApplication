@@ -19,14 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/menu"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="30sp" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -41,7 +33,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/main_course"
+            android:text="@string/entrees"
+            android:textStyle="bold"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
     </LinearLayout>
@@ -58,6 +51,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/pepperoni_pizza"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 
@@ -80,6 +74,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/cheese_pizza"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 
@@ -108,6 +103,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/apps"
+            android:textStyle="bold"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
     </LinearLayout>
@@ -124,6 +120,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/spicy_wings"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 
@@ -146,6 +143,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/breadsticks"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 
@@ -174,6 +172,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/drinks"
+            android:textStyle="bold"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
     </LinearLayout>
@@ -191,6 +190,7 @@
             android:layout_weight="1"
             android:text="@string/coca_cola"
             android:textColor="#0a0a0a"
+            android:gravity="center_vertical"
             android:textSize="20sp" />
 
         <Button
@@ -212,6 +212,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/sprite"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 

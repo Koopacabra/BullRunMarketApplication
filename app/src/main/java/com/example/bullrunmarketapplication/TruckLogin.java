@@ -64,26 +64,31 @@ public class TruckLogin extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
 
-                //if statement leading to switches to determine which page the truck navigates to
+                /*if statement leading to switches to determine which page the truck navigates to;
+                 * also assigns the truckId per truck;*/
                 if (user != null && user.getPassword().equals(password)) {
                     switch (username) {
                         case "Ricos Tacos": {
-                            Intent intent = new Intent(getApplicationContext(), TacosTruck_OrdersOpen.class);
+                            Intent intent = new Intent(getApplicationContext(), TruckOrders.class);
+                            intent.putExtra("truckId",4);
                             startActivity(intent);
                             break;
                         }
                         case "Italian on Wheels": {
-                            Intent intent = new Intent(getApplicationContext(), ItalianTruck_OrdersOpen.class);
+                            Intent intent = new Intent(getApplicationContext(), TruckOrders.class);
+                            intent.putExtra("truckId",2);
                             startActivity(intent);
                             break;
                         }
                         case "Pizza Time": {
-                            Intent intent = new Intent(getApplicationContext(), PizzaTruck_OrdersOpen.class);
+                            Intent intent = new Intent(getApplicationContext(), TruckOrders.class);
+                            intent.putExtra("truckId",3);
                             startActivity(intent);
                             break;
                         }
                         case "Hyderabadi Delight": {
-                            Intent intent = new Intent(getApplicationContext(), DelightTruck_OrdersOpen.class);
+                            Intent intent = new Intent(getApplicationContext(), TruckOrders.class);
+                            intent.putExtra("truckId",1);
                             startActivity(intent);
                             break;
                         }

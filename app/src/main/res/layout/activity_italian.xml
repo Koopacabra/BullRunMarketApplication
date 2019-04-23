@@ -19,15 +19,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/italian_menu"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="30sp" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -43,6 +34,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/entrees"
+            android:textStyle="bold"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
     </LinearLayout>
@@ -59,6 +51,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/shells"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 
@@ -81,6 +74,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/spaghetti"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 
@@ -109,6 +103,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/apps2"
+            android:textStyle="bold"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
     </LinearLayout>
@@ -125,6 +120,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/oysterSalad"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 
@@ -147,6 +143,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/knots"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 
@@ -175,6 +172,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/italianDrinks"
+            android:textStyle="bold"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
     </LinearLayout>
@@ -191,6 +189,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/virginLim"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 
@@ -213,6 +212,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/icedTea"
+            android:gravity="center_vertical"
             android:textColor="#0a0a0a"
             android:textSize="20sp" />
 

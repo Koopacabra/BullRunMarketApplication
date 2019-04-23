@@ -18,16 +18,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/menu"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="30sp" />
-
     </LinearLayout>
+
     <LinearLayout
         android:layout_marginTop="10dp"
         android:weightSum="2"
@@ -38,7 +30,8 @@
 
         <TextView
             android:layout_weight="1"
-            android:text="@string/main_course"
+            android:text="@string/entrees"
+            android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="0dp"
@@ -55,6 +48,7 @@
         <TextView
             android:layout_weight="1"
             android:text="@string/chicken_biryani"
+            android:gravity="center_vertical"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -76,6 +70,7 @@
         <TextView
             android:layout_weight="1"
             android:text="@string/mysore_masala"
+            android:gravity="center_vertical"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -104,6 +99,7 @@
         <TextView
             android:layout_weight="1"
             android:text="@string/apps"
+            android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="0dp"
@@ -121,6 +117,7 @@
         <TextView
             android:layout_weight="1"
             android:text="@string/jelebi"
+            android:gravity="center_vertical"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -143,6 +140,7 @@
         <TextView
             android:layout_weight="1"
             android:text="@string/gulab_jamun"
+            android:gravity="center_vertical"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -171,6 +169,7 @@
         <TextView
             android:layout_weight="1"
             android:text="@string/drinks"
+            android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="0dp"
@@ -188,6 +187,7 @@
         <TextView
             android:layout_weight="1"
             android:text="@string/thums_up"
+            android:gravity="center_vertical"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
@@ -210,6 +210,7 @@
         <TextView
             android:layout_weight="1"
             android:text="@string/mango_lassi"
+            android:gravity="center_vertical"
             android:textSize="20sp"
             android:textColor="#0a0a0a"
             android:layout_width="match_parent"
