@@ -32,7 +32,7 @@ public class BaseMenuActivity extends AppCompatActivity {
         }
     }
 
-    //retains code to be used for truckID
+    //finishes the activity on a successful purchase (clears dialogues, cursors, etc.)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -71,13 +71,12 @@ public class BaseMenuActivity extends AppCompatActivity {
                 break;
             //case to go to Checkout
             case R.id.options_cart:
-                //toast to float message going to Cart
-                Toast.makeText(getApplicationContext(), "Does everything look correct?", Toast.LENGTH_SHORT).show();
                 //intent to navigate to Checkout activity
                 Intent checkout = new Intent(this, Checkout.class);
                 checkout.putParcelableArrayListExtra("list",itemsToCheckout);
                 checkout.putExtra("truck",truckId);
                 startActivityForResult(checkout,1234);
+                break;
             default:
                 //unknown error action TBD
         }

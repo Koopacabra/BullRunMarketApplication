@@ -23,7 +23,7 @@ public class Delight_Landing extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
 
-
+        //grabs the intended activity for the related truckID
         final String truck_id =  getIntent().getStringExtra("truck_id");
 
         button = findViewById(R.id.button);
@@ -35,6 +35,7 @@ public class Delight_Landing extends AppCompatActivity {
         });
     }
 
+    //function to open delight menu and assign truckID
     public void openhyderabadidelight(String truck_id){
         Intent intent = new Intent(this, Delight.class);
         intent.putExtra("truck_id", truck_id);
@@ -72,8 +73,6 @@ public class Delight_Landing extends AppCompatActivity {
                 break;
             //case to go to Checkout
             case R.id.options_cart:
-                //toast to float message going to Cart
-                Toast.makeText(getApplicationContext(), "Does everything look correct?", Toast.LENGTH_SHORT).show();
                 //intent to navigate to Checkout activity
                 Intent checkout = new Intent(this, Checkout.class);
                 startActivity(checkout);

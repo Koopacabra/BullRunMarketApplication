@@ -10,11 +10,11 @@ public class Item {
     public double price;
     public int quantity;
 
+    //DO NOT DELETE -- used by json
     public Item() {
-
     }
 
-    //public function used during checkout to increment/decrement along with the correct item details
+    //function to assign variables to the items within the current activity
     public Item(String name, double price, int quantity) {
         this.name = name;
         this.price = price;

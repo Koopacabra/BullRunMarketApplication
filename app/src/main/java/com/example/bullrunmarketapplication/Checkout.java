@@ -27,6 +27,7 @@ import java.util.List;
 //implementing view onClickListener to we can take action on clicks when needed
 public class Checkout extends AppCompatActivity implements View.OnClickListener, OnSuccessListener, OnFailureListener {
 
+    //declaring Firebase database as a public reference for other classes
     public static final String FIREBASE_DOMAIN_URL = "https://bullrunmarketapplication.firebaseio.com/";
 
     //declaring FoodItem list from the class & other necessary variables
@@ -53,6 +54,13 @@ public class Checkout extends AppCompatActivity implements View.OnClickListener,
         items = getIntent().getParcelableArrayListExtra("list");
         truckId = getIntent().getIntExtra("truck", 1);
 
+        //statement to allow the cart to be viewed even if it is empty (resolved the app crashing if done prior to this)
+        if(items==null || items.size()==0){
+            items = new ArrayList<>();
+            Toast.makeText(this, "No Items in Cart!", Toast.LENGTH_SHORT).show();
+            findViewById(R.id.makePayment).setEnabled(false);
+            return;
+        }
         /*loading recycler view (handy with cards, server/json requests, refreshing data on swipes
         /and expandable list items) and declaring adapter to listen*/
         recyclerView = findViewById(R.id.rv);
@@ -147,7 +155,7 @@ public class Checkout extends AppCompatActivity implements View.OnClickListener,
         /*saves the items ordered + the token from the successful purchase;
         * uses the timestamp the order was placed as the orderID rather than random generation;
         * includes the truckID so that the order goes to the correct truck*/
-        Order order = new Order(items, token);
+        Order order = new Order(items, token, CustLogin.getUsername(this));
         FirebaseDatabase database = FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
         database.getReference("orders")
                 .child(truckId + "")
