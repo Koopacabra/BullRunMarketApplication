@@ -57,6 +57,7 @@
     <string name="purchase">Purchase</string>
     <string name="confirm">Looks Good!</string>
     <string name="orderTotal">(order total here)</string>
+    <string name="prompt_number">Number</string>
 
     //Italian on Wheels Strings
     <string name="italian_menu">Italian on Wheels Menu</string>
@@ -109,6 +110,7 @@
     <string name="about">About</string>
     <string name="tacosMotto">Mexican cuisine straight from the streets of Tijuana.  We have everything from tacos to horchata!</string>
     <string name="closedOrders">Closed Orders</string>
+    <string name="about_ats">Advanced Tech Society</string>
 
 
 </resources>
