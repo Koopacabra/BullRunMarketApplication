@@ -1,6 +1,8 @@
 package com.example.bullrunmarketapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -64,6 +66,10 @@ public class CustLogin extends AppCompatActivity {
                         if(login.getPassword() !=  null && login.getPassword().equals(password)){
                             Toast.makeText(CustLogin.this, "Login success!", Toast.LENGTH_SHORT).show();
 
+                            //saving the username on successful login to be used within the order
+                            saveUsername(login.getUsername());
+
+                            //navigating to TruckSelection
                             Intent intent = new Intent(getApplicationContext(), TruckSelection.class);
                             startActivity(intent);
                         }
@@ -76,10 +82,24 @@ public class CustLogin extends AppCompatActivity {
                 }
             }
 
+            //function for database errors
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                //custom code
+
             }
         });
+    }
+
+    //functions to save the username on success and enter it as a Firebase key
+    void saveUsername(String username){
+        getPref(this).edit().putString("username",username).apply();
+    }
+
+    public static String getUsername(Context context){
+        return  getPref(context).getString("username",null);
+    }
+
+    public static SharedPreferences getPref(Context context){
+       return context.getSharedPreferences("bullrun",MODE_PRIVATE);
     }
 }

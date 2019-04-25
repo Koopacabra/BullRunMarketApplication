@@ -107,7 +107,7 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
             //case to go to Checkout
             case R.id.options_cart:
                 //toast to float message going to Cart
-                Toast.makeText(getApplicationContext(), "Does everything look correct?", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getApplicationContext(), "Does everything look correct?", Toast.LENGTH_SHORT).show();
                 //intent to navigate to Checkout activity
                 Intent checkout = new Intent(this, Checkout.class);
                 startActivity(checkout);

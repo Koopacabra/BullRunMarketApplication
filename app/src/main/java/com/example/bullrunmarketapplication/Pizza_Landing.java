@@ -32,6 +32,7 @@ public class Pizza_Landing extends AppCompatActivity {
         });
     }
 
+    //function to open pizza menu and assign truckID
     public void openpizzatime() {
         Intent intent = new Intent(this, Pizza.class);
         startActivity(intent);
@@ -68,8 +69,6 @@ public class Pizza_Landing extends AppCompatActivity {
                 break;
             //case to go to Checkout
             case R.id.options_cart:
-                //toast to float message going to Cart
-                Toast.makeText(getApplicationContext(), "Does everything look correct?", Toast.LENGTH_SHORT).show();
                 //intent to navigate to Checkout activity
                 Intent checkout = new Intent(this, Checkout.class);
                 startActivity(checkout);

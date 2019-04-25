@@ -15,7 +15,6 @@
     <TextView
         android:id="@+id/total"
         android:padding="16dp"
-        android:text="Total: "
         style="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
