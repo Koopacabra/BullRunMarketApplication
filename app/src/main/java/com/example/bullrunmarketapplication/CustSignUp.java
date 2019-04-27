@@ -22,7 +22,7 @@ public class CustSignUp extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference users;
 
-    EditText edtUsername, edtPassword, edtNumber;
+    EditText edtUsername, edtPassword, edtEmail;
     Button btnToSignIn, btnRegister;
 
     @Override
@@ -37,7 +37,7 @@ public class CustSignUp extends AppCompatActivity {
 
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
-        edtNumber = findViewById(R.id.edtNumber);
+        edtEmail = findViewById(R.id.edtEmail);
 
         btnRegister = findViewById(R.id.btnRegister);
         btnToSignIn = findViewById(R.id.btnToSignIn);
@@ -54,7 +54,7 @@ public class CustSignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final User user = new User(edtUsername.getText().toString(),
-                        edtPassword.getText().toString(), edtNumber.getText().toString());
+                        edtPassword.getText().toString(), edtEmail.getText().toString());
 
                 users.addListenerForSingleValueEvent(new ValueEventListener(){
                     @Override

@@ -1,17 +1,19 @@
 package com.example.bullrunmarketapplication.Model;
 
+import com.example.bullrunmarketapplication.Email;
+
 public class User {
 
     private String Username;
     private String Password;
-    private String Number;
+    private String Email;
 
     public User() {}
 
-    public User(String username, String password, String number){
+    public User(String username, String password, String email){
         this.Username = username;
         this.Password = password;
-        this.Number = number;
+        this.Email = email;
     }
 
     public String getUsername() {
@@ -30,9 +32,9 @@ public class User {
         this.Password = password;
     }
 
-    public String getNumber () { return Number; }
+    public String getEmail () { return Email; }
 
-    public void setNumber (String number) {this.Number = number; }
+    public void setEmail (String email) {this.Email = email; }
 
 }
 

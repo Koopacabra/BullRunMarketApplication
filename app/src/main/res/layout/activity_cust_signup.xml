@@ -77,10 +77,10 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/edtNumber"
+                    android:id="@+id/edtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_number"
+                    android:hint="@string/prompt_email"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
