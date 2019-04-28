@@ -7,6 +7,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
 
 public class About extends AppCompatActivity {
 
@@ -19,6 +24,11 @@ public class About extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
     }
+    public void about (View view) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://bstlouis95.wixsite.com/bullrunmarket"));
+        startActivity(browserIntent);
+    }
+
 
     //function to create the options/overflow menu for the app bar
     @Override

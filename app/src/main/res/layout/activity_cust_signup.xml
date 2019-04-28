@@ -72,6 +72,22 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/prompt_email"
+                    android:imeActionId="6"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified"
+                     />
+
+            </android.support.design.widget.TextInputLayout>
+
             <Button
                 android:id="@+id/btnRegister"
                 style="?android:textAppearanceSmall"
@@ -79,8 +95,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_register"
-                android:background="@color/colorPrimaryDark"
-                android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
 
             <TextView
@@ -89,7 +103,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/customerQ"
                 android:layout_marginTop="20dp"
-                android:textStyle="bold"
                 android:gravity="center"/>
 
             <Button
@@ -97,10 +110,8 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:text="@string/action_sign_in"
-                android:layout_marginTop="5dp"
-                android:background="@color/colorPrimaryDark"
-                android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
 
         </LinearLayout>
