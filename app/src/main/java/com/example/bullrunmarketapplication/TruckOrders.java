@@ -30,6 +30,7 @@ import static com.example.bullrunmarketapplication.Checkout.FIREBASE_DOMAIN_URL;
 //extending the listeners from both OrderAdapter and CloseOrderDialogFragment to allow the dialog popup and transition orders to closed
 public class TruckOrders extends AppCompatActivity implements OrderAdapter.InteractionListener, CloseOrderDialogFragment.InteractionListener {
 
+    //obtaining & listing the orders from Orders.java, declaring local order adapter and truckID
     List<Order> orders = new ArrayList<>();
     private OrderAdapter mOrdersAdapter;
     int truckId;
@@ -42,7 +43,10 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
         //setting TextView label at the top
         ((TextView)findViewById(R.id.orders)).setText("Open Orders");
 
+        /*locates the truckID from the order to only display orders for that truck;
+        defaults to 1 but everyone order is associated with a truckID from when they browsed the menu*/
         truckId = getIntent().getIntExtra("truckId",1);
+
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
@@ -68,56 +72,66 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
         //setting the title
         getSupportActionBar().setTitle(title);
 
-        //displaying the recyclerView which displays the orders appropriate to the truck
+        //displaying the recyclerView which displays Open orders appropriate to the truck
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         mOrdersAdapter = new OrderAdapter(orders,this);
         recyclerView.setAdapter(mOrdersAdapter);
 
-        //calling the firebase orders collection and labeling if closed or not
+        //reads all the orders from Firebase for the related truckID
         final FirebaseDatabase database =  FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
         database.getReference("orders")
                 .child(truckId + "").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Order order = dataSnapshot.getValue(Order.class);
+                //grabbing the id key
                 order.id = dataSnapshot.getKey();
+
+                //only looks for open orders, !/not isClosed
                 if(!order.isClosed) {
                     orders.add(order);
                     Log.i(TruckOrders.class.getSimpleName(), order.toString());
-                    // update list
+                    //updates the list of orders
                     mOrdersAdapter.notifyDataSetChanged();
                 }
             }
 
-            //removes the order if the order status is changed
+            //called when the order details or status changes (open to closed)
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Order order = dataSnapshot.getValue(Order.class);
+                //grabbing the id key
                 order.id = dataSnapshot.getKey();
 
+                //updating the order in the list includes removing it from the list
                 orders.remove(order);
 
-                //lists order as closed
+                //interested only in open orders & adds to the list of orders if so
                 if(!order.isClosed){
                     orders.add(order);
                     Log.i(TruckOrders.class.getSimpleName(), order.toString());
                 }
-                // update list
+                //updates the list
                 mOrdersAdapter.notifyDataSetChanged();
             }
 
-            //constructors needed for removed/moved/cancelled
+            /*Firebase callbacks which track the orders for the current truckID
+            which is assigned to the truck's login credentials and in turn when they sign in*/
+
+            //if the order is removed from Firebase
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
 
             }
 
+            //if the order is moved within Firebase
             @Override
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
             }
 
+            //cancelled/cannot listen to Firebase changes
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -156,9 +170,9 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
                 break;
             //case to go to Checkout
             case R.id.orders_closed:
-                //toast to float message going to Cart
-                Toast.makeText(getApplicationContext(), "These orders are completed", Toast.LENGTH_SHORT).show();
-                //intent to navigate to Checkout activity
+                //toast to float message going to closed orders
+                Toast.makeText(getApplicationContext(), "These orders are closed", Toast.LENGTH_SHORT).show();
+                //intent to navigate to closed orders activity
                 Intent checkout = new Intent(this, TruckOrdersClosed.class);
                 checkout.putExtra("truckId",truckId);
                 checkout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -179,16 +193,18 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
         fragment.show(getSupportFragmentManager(), CloseOrderDialogFragment.class.getSimpleName());
     }
 
-    //labels the order as closed within firebase if the user closes the order and toasts accordingly
+    //labels the order as closed within firebase if the user closes the order; toasts accordingly
     @Override
     public void closeOrderClicked() {
         selectedOrder.isClosed = true;
         final FirebaseDatabase database =  FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
         database.getReference("orders")
+                //successful close
                 .child(truckId + "").child(selectedOrder.id).setValue(selectedOrder).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(TruckOrders.this, "Order Closed", Toast.LENGTH_SHORT).show();
+                //error closing
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

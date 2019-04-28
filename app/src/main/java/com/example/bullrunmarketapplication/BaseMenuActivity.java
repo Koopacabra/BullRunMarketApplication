@@ -19,12 +19,14 @@ public class BaseMenuActivity extends AppCompatActivity {
     protected int truckId = 1;
     protected ArrayList<FoodItem> itemsToCheckout =new ArrayList<>();
 
-    //toasts the name of each item as they're added and sends it to checkout including its details
+    // Adds the item to the cart. Increases the quantity by 1 if the item is already in the cart.
     void addFoodToCart(String name, double price){
         Toast.makeText(this, name+" added to cart", Toast.LENGTH_SHORT).show();
         FoodItem foodItem = new FoodItem( name, price);
         int index = itemsToCheckout.indexOf(foodItem);
-        //forces the checkout quantity to be increased as they're added because the if is N/A
+
+        /*checks if the added foodItem is not already in the cart and if not, it is added;
+         else, the existing item in the cart has its quantity increased.*/
         if(index == -1){
             itemsToCheckout.add(foodItem);
         } else {

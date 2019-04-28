@@ -23,6 +23,7 @@ public class Tacos_Landing extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
 
+        //registering the button to open the menu activity
         button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

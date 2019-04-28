@@ -3,7 +3,10 @@ package com.example.bullrunmarketapplication.Model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-//parcelable creates a serializable list of items we can add and remove to/from
+
+ /*This class is our virtual cart which holds the added items;
+ Made parcelable so multiple items can be bundled easier
+  */
 public class FoodItem implements Parcelable {
 
     int id;
@@ -11,14 +14,14 @@ public class FoodItem implements Parcelable {
     public double price;
     public int quantity;
 
-    //public function used during checkout to increment/decrement along with the correct item details
+    //initializes the Object with name, price and default quantity of 1
     public FoodItem(String name, double price) {
         this.name = name;
         this.price = price;
         this.quantity = 1;
     }
 
-    //declaring variables to be read into the parcelable list
+    // parcelable implementation
     protected FoodItem(Parcel in) {
         id = in.readInt();
         name = in.readString();
@@ -26,7 +29,7 @@ public class FoodItem implements Parcelable {
         quantity = in.readInt();
     }
 
-    //creates a new parcelable list
+    /*parcelable implementation similar to Vogella.com examples*/
     public static final Creator<FoodItem> CREATOR = new Creator<FoodItem>() {
         @Override
         public FoodItem createFromParcel(Parcel in) {
@@ -39,7 +42,7 @@ public class FoodItem implements Parcelable {
         }
     };
 
-    //records the item name
+    // FoodItems identified by their name
     @Override
     public boolean equals(Object obj) {
         return name.equals(((FoodItem) obj).name);
@@ -50,7 +53,7 @@ public class FoodItem implements Parcelable {
         return 0;
     }
 
-    //adding the variables into the parcelable list
+     /*parcelable implementation similar to Vogella.com examples*/
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
@@ -61,5 +64,11 @@ public class FoodItem implements Parcelable {
 
     public Item toItem() {
         return new Item(name, price, quantity);
+    }
+
+    //prepares string which includes quantity and name. Can be used to display in lists/activities
+    @Override
+    public String toString() {
+        return "("+quantity+") " + name;
     }
 }

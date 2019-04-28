@@ -42,9 +42,23 @@ public class TruckLogin extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                edtUsername.setError(null);
+                edtPassword.setError(null);
 
-                signInReadUser(edtUsername.getText().toString(),
-                        edtPassword.getText().toString());
+                String username  =  edtUsername.getText().toString();
+                String password  = edtPassword.getText().toString();
+
+                //conditionals so the username or password cannot be empty
+                if(TextUtils.isEmpty(username)){
+                    edtUsername.setError("Cannot be empty");
+                    return;
+                }
+
+                if(TextUtils.isEmpty(password)){
+                    edtPassword.setError("Cannot be empty");
+                    return;
+                }
+                signInReadUser(username,password);
             }
         });
     }
@@ -94,7 +108,7 @@ public class TruckLogin extends AppCompatActivity {
                         }
                     }
                 }
-                //else statement to toasty user that there was a mismatch
+                //else statement to toast user that there was a mismatch
                 else {
                     Toast.makeText(TruckLogin.this, "Username or password did not match", Toast.LENGTH_SHORT).show();
                 }

@@ -13,7 +13,8 @@ import com.example.bullrunmarketapplication.Model.FoodItem;
 import java.text.DecimalFormat;
 import java.util.List;
 
-//checkout adapter needed to bridge the view and data; recycler view can refresh data on swipes and is handy with collections
+/*checkout adapter to help bridge the data and checkout view;
+recycler view can refresh data on swipes and is handy with collections*/
 public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.MyViewHolder> {
 
     List<FoodItem> mItems;
@@ -24,33 +25,34 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.MyView
         mListener = listener;
     }
 
-    //inserts items into the checkout list
+    /*Builds the layout for each item index;
+     *Any item can populate in the list based on which view/order/truck it is for.*/
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
         return new MyViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_checkout_item,viewGroup,false));
     }
 
-    //contains items listed in the view and listens for adding / subtracting quantity
+    //Binds the data to the layout that was just built
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        FoodItem item = mItems.get(i);
+    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int position) {
+        FoodItem item = mItems.get(position);
         myViewHolder.name.setText(item.name);
         myViewHolder.price.setText("$"+new DecimalFormat("#.##").format(item.price));
         myViewHolder.quantity.setText(""+item.quantity);
         myViewHolder.add.setOnClickListener(mListener);
         myViewHolder.sub.setOnClickListener(mListener);
-        myViewHolder.add.setTag(""+i);
-        myViewHolder.sub.setTag(""+i);
+        myViewHolder.add.setTag(""+position);
+        myViewHolder.sub.setTag(""+position);
     }
 
-    //used for subtotal calculation
+    //counts the number of items in the recyclerView
     @Override
     public int getItemCount() {
         return mItems.size();
     }
 
-    //declares item details to be tracked in the view
+    //ViewHolder class that keeps track of all the views in the recyclerView layout
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView name;
         TextView price;

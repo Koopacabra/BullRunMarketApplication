@@ -2,7 +2,9 @@ package com.example.bullrunmarketapplication.Model;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 
-//parcelable creates a serializable list of items we can add and remove to/from
+
+/*class Item to convert local cart/order to be sent to Firebase;
+stores the name, price and quantity*/
 @IgnoreExtraProperties
 public class Item {
 
@@ -10,18 +12,18 @@ public class Item {
     public double price;
     public int quantity;
 
-    //DO NOT DELETE -- used by json
+    //DO NOT DELETE -- used by Firebase's JSON to convert Firebase data to objects
     public Item() {
     }
 
-    //function to assign variables to the items within the current activity
+    // builds the object
     public Item(String name, double price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
-    //pulls the item name from Order.java's toString and includes the quantity
+    //prepares string which includes quantity and name. Can be used to display in lists/activities
     @Override
     public String toString() {
         return "("+quantity+") " + name;

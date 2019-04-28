@@ -37,7 +37,7 @@ public class CloseOrderDialogFragment extends DialogFragment {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage("Ready to close this order?")
-               .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int id) {
                        mListener.closeOrderClicked();
                    }

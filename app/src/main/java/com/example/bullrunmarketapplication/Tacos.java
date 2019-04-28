@@ -11,6 +11,7 @@ public class Tacos extends BaseMenuActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tacos);
+        //assigning any menu items to the Tacos TruckID
         truckId = 4;
 
         //casting toolbar as an actionbar

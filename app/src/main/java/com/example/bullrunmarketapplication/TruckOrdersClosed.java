@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.bullrunmarketapplication.Model.FoodItem;
+import com.example.bullrunmarketapplication.Model.Item;
 import com.example.bullrunmarketapplication.Model.Order;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -26,27 +28,32 @@ import java.util.List;
 import static com.example.bullrunmarketapplication.Checkout.FIREBASE_DOMAIN_URL;
 
 //extending OrderAdapter to listen for when the order state transitions to closed
-public class TruckOrdersClosed extends AppCompatActivity implements OrderAdapter.InteractionListener{
+public class TruckOrdersClosed extends AppCompatActivity implements OrderAdapter.InteractionListener {
 
+    //obtaining & listing the orders from Orders.java, declaring local order adapter and truckID
     List<Order> orders = new ArrayList<>();
     private OrderAdapter mOrdersAdapter;
-    int truckId;
+    protected static int truckId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truck_orders);
 
-        ((TextView)findViewById(R.id.orders)).setText("Closed Orders");
+        //setting TextView label at the top
+        ((TextView) findViewById(R.id.orders)).setText("Closed Orders");
 
-        truckId = getIntent().getIntExtra("truckId",1);
+        /*locates the truckID from the order to only display orders for that truck;
+        defaults to 1 but everyone order is associated with a truckID from when they browsed the menu*/
+        truckId = getIntent().getIntExtra("truckId", 1);
+
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
 
         //cases to change the title of the activity in the app bar based on the truckID
         String title = "";
-        switch (truckId){
+        switch (truckId) {
             case 1:
                 title = "Hyderabadi Delight";
                 break;
@@ -65,14 +72,14 @@ public class TruckOrdersClosed extends AppCompatActivity implements OrderAdapter
         //setting the title
         getSupportActionBar().setTitle(title);
 
-        //recycler view to display the orders relative to what truckID they're from
+        //displaying the recyclerView which displays Open orders appropriate to the truck
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mOrdersAdapter = new OrderAdapter(orders,this);
+        mOrdersAdapter = new OrderAdapter(orders, this);
         recyclerView.setAdapter(mOrdersAdapter);
 
-        //captures the Firebase instance and runs through the onChildAdded function
-        final FirebaseDatabase database =  FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
+        //reads all the orders from Firebase for the related truckID
+        final FirebaseDatabase database = FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
         database.getReference("orders")
                 .child(truckId + "").addChildEventListener(new ChildEventListener() {
             @Override
@@ -80,42 +87,51 @@ public class TruckOrdersClosed extends AppCompatActivity implements OrderAdapter
                 Order order = dataSnapshot.getValue(Order.class);
                 //grabbing the id key
                 order.id = dataSnapshot.getKey();
-                //places order in closedOrders activity if it is closed
-                if(order.isClosed) {
+
+                //only looks for closed orders
+                if (order.isClosed) {
                     orders.add(order);
                     Log.i(TruckOrders.class.getSimpleName(), order.toString());
                     //updates the list of orders
                     mOrdersAdapter.notifyDataSetChanged();
                 }
             }
-
-            //function to remove the order from the list if it changes (open -> closed)
+            //called when there are changes made to the order like a refund
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Order order = dataSnapshot.getValue(Order.class);
+                //grabbing the id key
                 order.id = dataSnapshot.getKey();
 
+                //updating the order in the list includes removing it from the list
                 orders.remove(order);
-                //places order in closedOrders activity if it is closed
-                if(order.isClosed){
+
+                //interested only in closed orders & adds to the list of orders if so
+                if (order.isClosed) {
                     orders.add(order);
                     Log.i(TruckOrders.class.getSimpleName(), order.toString());
                 }
-                // updates the list of items
+                //updates the list
                 mOrdersAdapter.notifyDataSetChanged();
             }
 
-            //constructors to employ removed/moved/cancelled
+
+            /*Firebase callbacks which track the orders for the current truckID
+            which is assigned to the truck's login credentials and in turn when they sign in*/
+
+            //if the order is removed from Firebase
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
 
             }
 
+            //if the order is moved within Firebase
             @Override
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
             }
 
+            //cancelled/cannot listen to Firebase changes
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -154,11 +170,11 @@ public class TruckOrdersClosed extends AppCompatActivity implements OrderAdapter
                 break;
             //case to go to Checkout
             case R.id.orders_open:
-                //toast to float message going to Cart
+                //toast to float message going to open orders
                 Toast.makeText(getApplicationContext(), "These orders are open", Toast.LENGTH_SHORT).show();
-                //intent to navigate to Checkout activity
+                //intent to navigate to open orders activity
                 Intent openOrders = new Intent(this, TruckOrders.class);
-                openOrders.putExtra("truckId",truckId);
+                openOrders.putExtra("truckId", truckId);
                 openOrders.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(openOrders);
             default:
@@ -168,9 +184,24 @@ public class TruckOrdersClosed extends AppCompatActivity implements OrderAdapter
         return super.onOptionsItemSelected(item);
     }
 
-    //executes onItemSelected
+    protected static Order selectedOrder;
+
+    //listens when an order is selected and navigates to the refund popup activity
     @Override
     public void onItemSelected(Order order) {
+        selectedOrder = order;
 
+        //shows the order details as a new list
+        ArrayList<FoodItem> foodItems = new ArrayList<>();
+        for (Item item : selectedOrder.items) {
+            FoodItem foodItem = new FoodItem(item.name, item.price);
+            foodItem.quantity = item.quantity;
+            foodItems.add(foodItem);
+        }
+
+        //intent to go to the refund popup activity
+        Intent intent = new Intent(this, PaymentRefund.class);
+        startActivity(intent);
     }
 }
+

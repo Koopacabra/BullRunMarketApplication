@@ -12,6 +12,7 @@ public class Delight extends BaseMenuActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delight);
+        //assigning any menu items to the Delight TruckID
         truckId = 1;
 
         //casting toolbar as an actionbar

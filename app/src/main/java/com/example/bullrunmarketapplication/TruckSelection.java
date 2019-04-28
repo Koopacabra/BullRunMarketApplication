@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class TruckSelection extends AppCompatActivity implements View.OnClickListener{
+public class TruckSelection extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +28,12 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
         CardView cardView = findViewById(R.id.cardView_delight);
         view.setOnClickListener(this);
         //if else to decide whether to show the normal or greyed-out icon for the truck based on the set schedule
-        if(isAvailable(Delight_Landing.class)){
+        if (isAvailable(Delight_Landing.class)) {
             view.setImageResource(R.drawable.delight);
-            cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.white));
+            cardView.setCardBackgroundColor(ContextCompat.getColor(this, android.R.color.white));
         } else {
             view.setImageResource(R.drawable.delight_grey);
-            cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.darker_gray));
+            cardView.setCardBackgroundColor(ContextCompat.getColor(this, android.R.color.darker_gray));
         }
 
         //pizza image button intent to navigate to pizza time landing page
@@ -41,12 +41,12 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
         view.setOnClickListener(this);
         cardView = findViewById(R.id.cardView_pizza);
         //if else to decide whether to show the normal or greyed-out icon for the truck based on the set schedule
-        if(isAvailable(Pizza_Landing.class)){
+        if (isAvailable(Pizza_Landing.class)) {
             view.setImageResource(R.drawable.pizza);
-            cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.white));
+            cardView.setCardBackgroundColor(ContextCompat.getColor(this, android.R.color.white));
         } else {
             view.setImageResource(R.drawable.pizza_grey);
-            cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.darker_gray));
+            cardView.setCardBackgroundColor(ContextCompat.getColor(this, android.R.color.darker_gray));
         }
 
         //italian image button intent to navigate to italian on wheels landing page
@@ -54,12 +54,12 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
         view.setOnClickListener(this);
         cardView = findViewById(R.id.cardView_italian);
         //if else to decide whether to show the normal or greyed-out icon for the truck based on the set schedule
-        if(isAvailable(Italian_Landing.class)){
+        if (isAvailable(Italian_Landing.class)) {
             view.setImageResource(R.drawable.italian);
-            cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.white));
+            cardView.setCardBackgroundColor(ContextCompat.getColor(this, android.R.color.white));
         } else {
             view.setImageResource(R.drawable.italian_grey);
-            cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.darker_gray));
+            cardView.setCardBackgroundColor(ContextCompat.getColor(this, android.R.color.darker_gray));
         }
 
         //tacos image button intent to navigate to ricos tacos landing page
@@ -67,12 +67,12 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
         view.setOnClickListener(this);
         cardView = findViewById(R.id.cardView_tacos);
         //if else to decide whether to show the normal or greyed-out icon for the truck based on the set schedule
-        if(isAvailable(Tacos_Landing.class)){
+        if (isAvailable(Tacos_Landing.class)) {
             view.setImageResource(R.drawable.tacos);
-            cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.white));
+            cardView.setCardBackgroundColor(ContextCompat.getColor(this, android.R.color.white));
         } else {
             view.setImageResource(R.drawable.tacos_grey);
-            cardView.setCardBackgroundColor(ContextCompat.getColor(this,android.R.color.darker_gray));
+            cardView.setCardBackgroundColor(ContextCompat.getColor(this, android.R.color.darker_gray));
         }
     }
 
@@ -122,7 +122,7 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         Class activityToStart = null;
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.cardImage_delight:
                 activityToStart = Delight_Landing.class;
                 break;
@@ -138,8 +138,8 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
         }
 
         //if else to navigate to landing page if it is available based on the method below
-        if(activityToStart!=null){
-            if(isAvailable(activityToStart)) {
+        if (activityToStart != null) {
+            if (isAvailable(activityToStart)) {
                 startActivity(new Intent(TruckSelection.this, activityToStart));
             } else {
                 truckNotAvailableToast();
@@ -148,37 +148,44 @@ public class TruckSelection extends AppCompatActivity implements View.OnClickLis
     }
 
     //method which determines which trucks are available on which days
-    boolean isAvailable(Class clazz){
+    boolean isAvailable(Class clazz) {
         Calendar now = Calendar.getInstance();
         int dayOfWeek = now.get(Calendar.DAY_OF_WEEK);
 
         // No trucks are available on Sunday -- changes all icons to greyscale
-        if(dayOfWeek == 1){
+        if (dayOfWeek == 1) {
             return false;
         }
 
+        // trucks are available only in day time (11am to 5pm)
+        boolean isWithInDayTime = false;
+        int hourOfTheDay = now.get(Calendar.HOUR_OF_DAY); // 24 hour format 0-23
+        if (hourOfTheDay >= 11 && hourOfTheDay < 17) { // 11AM to 5PM
+            isWithInDayTime = true;
+        }
+
         //delight case
-        if(clazz.equals(Delight_Landing.class)){
+        if (clazz.equals(Delight_Landing.class)) {
             // Monday, Wed, Thursday, Fri, Sat
-            return (dayOfWeek == 2 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
-        //italian case
-        } else if(clazz.equals(Italian_Landing.class)){
+            return isWithInDayTime && (dayOfWeek == 2 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
+            //italian case
+        } else if (clazz.equals(Italian_Landing.class)) {
             // Mon, Tue, Thur, Fri, Sat
-            return (dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
-        //pizza case
-        } else if(clazz.equals(Pizza_Landing.class)){
+            return isWithInDayTime && (dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
+            //pizza case
+        } else if (clazz.equals(Pizza_Landing.class)) {
             // Mon, Tue, Wed, Fri, Sat
-            return (dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 4 ||dayOfWeek == 6 || dayOfWeek == 7);
-        //tacos case
-        } else if(clazz.equals(Tacos_Landing.class)){
+            return isWithInDayTime && (dayOfWeek == 2 || dayOfWeek == 3 || dayOfWeek == 4 || dayOfWeek == 6 || dayOfWeek == 7);
+            //tacos case
+        } else if (clazz.equals(Tacos_Landing.class)) {
             // Tue, Wed, Thur, Fri, Sat
-            return (dayOfWeek == 3 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
+            return isWithInDayTime && (dayOfWeek == 3 || dayOfWeek == 4 || dayOfWeek == 5 || dayOfWeek == 6 || dayOfWeek == 7);
         }
         return false;
     }
 
     //toasty to let the user know the truck is not available today (only shown if the truck is not scheduled for today)
-    void truckNotAvailableToast(){
-        Toast.makeText(this, "Truck is not available today", Toast.LENGTH_SHORT).show();
+    void truckNotAvailableToast() {
+        Toast.makeText(this, "Truck is not available now", Toast.LENGTH_SHORT).show();
     }
 }

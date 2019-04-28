@@ -23,22 +23,19 @@ public class Delight_Landing extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.appBar);
         setSupportActionBar(toolbar);
 
-        //grabs the intended activity for the related truckID
-        final String truck_id =  getIntent().getStringExtra("truck_id");
-
+        //registering the button to open the menu activity
         button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openhyderabadidelight(truck_id);
+                openhyderabadidelight();
             }
         });
     }
 
-    //function to open delight menu and assign truckID
-    public void openhyderabadidelight(String truck_id){
+    //function to open delight menu
+    public void openhyderabadidelight(){
         Intent intent = new Intent(this, Delight.class);
-        intent.putExtra("truck_id", truck_id);
         startActivity(intent);
         finish();
     }

@@ -4,14 +4,13 @@ public class User {
 
     private String Username;
     private String Password;
-    private String Number;
+    private boolean truck;
 
     public User() {}
 
-    public User(String username, String password, String number){
+    public User(String username, String password){
         this.Username = username;
         this.Password = password;
-        this.Number = number;
     }
 
     public String getUsername() {
@@ -30,9 +29,12 @@ public class User {
         this.Password = password;
     }
 
-    public String getNumber () { return Number; }
+    public boolean isTruck() {
+        return truck;
+    }
 
-    public void setNumber (String number) {this.Number = number; }
-
+    public void setTruck(boolean truck) {
+        this.truck = truck;
+    }
 }
 

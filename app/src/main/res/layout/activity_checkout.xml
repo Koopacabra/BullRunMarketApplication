@@ -33,7 +33,7 @@
 
     <Button
         android:id="@+id/makePayment"
-        android:text="Make Payment"
+        android:text="Proceed to Checkout"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
@@ -41,7 +41,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
 
 
 </android.support.constraint.ConstraintLayout>

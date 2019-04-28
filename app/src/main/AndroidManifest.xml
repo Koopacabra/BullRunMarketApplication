@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bullrunmarketapplication">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/usflogo"
@@ -12,7 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-
         <activity
             android:name=".TruckSelection"
             android:label="@string/app_name"
@@ -59,7 +57,10 @@
             android:label="@string/tacos"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PaymentProcessing"
+            android:name=".Payment"
+            android:theme="@style/AppTheme.PurchasePopUp" />
+        <activity
+            android:name=".PaymentRefund"
             android:theme="@style/AppTheme.PurchasePopUp" />
         <activity
             android:name=".Checkout"

@@ -11,6 +11,7 @@ public class Italian extends BaseMenuActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_italian);
+        //assigning any menu items to the Italian TruckID
         truckId = 2;
 
         //casting toolbar as an actionbar

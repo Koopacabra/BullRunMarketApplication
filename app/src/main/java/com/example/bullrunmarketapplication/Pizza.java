@@ -11,6 +11,7 @@ public class Pizza extends BaseMenuActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizza);
+        //assigning any menu items to the Pizza TruckID
         truckId = 3;
 
         //casting toolbar as an actionbar
