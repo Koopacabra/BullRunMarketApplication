@@ -7,6 +7,7 @@ public class User {
     private String Username;
     private String Password;
     private String Email;
+    private boolean truck;
 
     public User() {}
 
@@ -35,6 +36,14 @@ public class User {
     public String getEmail () { return Email; }
 
     public void setEmail (String email) {this.Email = email; }
+
+    public boolean isTruck() {
+        return truck;
+    }
+
+    public void setTruck(boolean truck) {
+        this.truck = truck;
+    }
 
 }
 
