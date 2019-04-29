@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 
 import static com.example.bullrunmarketapplication.Checkout.FIREBASE_DOMAIN_URL;
@@ -41,11 +42,11 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
         setContentView(R.layout.activity_truck_orders);
 
         //setting TextView label at the top
-        ((TextView)findViewById(R.id.orders)).setText("Open Orders");
+        ((TextView) findViewById(R.id.orders)).setText("Open Orders");
 
         /*locates the truckID from the order to only display orders for that truck;
         defaults to 1 but everyone order is associated with a truckID from when they browsed the menu*/
-        truckId = getIntent().getIntExtra("truckId",1);
+        truckId = getIntent().getIntExtra("truckId", 1);
 
         //casting toolbar as an actionbar
         Toolbar toolbar = findViewById(R.id.appBar);
@@ -53,7 +54,7 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
 
         //cases to change the appbar title depending on which truck it is
         String title = "";
-        switch (truckId){
+        switch (truckId) {
             case 1:
                 title = "Hyderabadi Delight";
                 break;
@@ -75,11 +76,11 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
         //displaying the recyclerView which displays Open orders appropriate to the truck
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mOrdersAdapter = new OrderAdapter(orders,this);
+        mOrdersAdapter = new OrderAdapter(orders, this);
         recyclerView.setAdapter(mOrdersAdapter);
 
         //reads all the orders from Firebase for the related truckID
-        final FirebaseDatabase database =  FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
         database.getReference("orders")
                 .child(truckId + "").addChildEventListener(new ChildEventListener() {
             @Override
@@ -89,7 +90,7 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
                 order.id = dataSnapshot.getKey();
 
                 //only looks for open orders, !/not isClosed
-                if(!order.isClosed) {
+                if (!order.isClosed) {
                     orders.add(order);
                     Log.i(TruckOrders.class.getSimpleName(), order.toString());
                     //updates the list of orders
@@ -108,7 +109,7 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
                 orders.remove(order);
 
                 //interested only in open orders & adds to the list of orders if so
-                if(!order.isClosed){
+                if (!order.isClosed) {
                     orders.add(order);
                     Log.i(TruckOrders.class.getSimpleName(), order.toString());
                 }
@@ -174,7 +175,7 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
                 Toast.makeText(getApplicationContext(), "These orders are closed", Toast.LENGTH_SHORT).show();
                 //intent to navigate to closed orders activity
                 Intent checkout = new Intent(this, TruckOrdersClosed.class);
-                checkout.putExtra("truckId",truckId);
+                checkout.putExtra("truckId", truckId);
                 checkout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(checkout);
             default:
@@ -184,8 +185,9 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
         return super.onOptionsItemSelected(item);
     }
 
-    //displays the dialog to close the order when selected
+    //displays the dialog to close the order when selected (function below)
     Order selectedOrder;
+
     @Override
     public void onItemSelected(Order order) {
         selectedOrder = order;
@@ -197,21 +199,50 @@ public class TruckOrders extends AppCompatActivity implements OrderAdapter.Inter
     @Override
     public void closeOrderClicked() {
         selectedOrder.isClosed = true;
-        final FirebaseDatabase database =  FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
+        // update the order closed status.
         database.getReference("orders")
-                //successful close
-                .child(truckId + "").child(selectedOrder.id).setValue(selectedOrder).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Toast.makeText(TruckOrders.this, "Order Closed", Toast.LENGTH_SHORT).show();
-                //error closing
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.e(TruckOrders.class.getSimpleName(),e.getLocalizedMessage());
-                Toast.makeText(TruckOrders.this, "Order cannot be closed. Try Later!", Toast.LENGTH_SHORT).show();
-            }
-        });
+                .child(truckId + "")
+                .child(selectedOrder.id)
+                .setValue(selectedOrder)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // order status updated successfully
+                        Toast.makeText(TruckOrders.this, "Order Closed", Toast.LENGTH_SHORT).show();
+
+                        //calls the sendMail function below (when an order is closed)
+                        sendMail(selectedOrder);
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // failed to update order status
+                        Log.e(TruckOrders.class.getSimpleName(), e.getLocalizedMessage());
+                        Toast.makeText(TruckOrders.this, "Order cannot be closed. Try Later!", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
+
+    /*implementing the functions from the removed Email.java class
+     * to be used here when the order is changed to closed;
+     * calling the email object and orderID from the order details (Order.java via OrderAdapter.java);
+     * calling the truck name from the function below which gets it from the app bar title*/
+    private void sendMail(Order selectedOrder) {
+        Hashtable<String, String> params = new Hashtable<>();
+        params.put("to", selectedOrder.email);
+        params.put("from", "bullrunmarketapp@gmail.com");
+        params.put("subject", "Your BRM Order: "+selectedOrder.id+" is Ready");
+        params.put("text", "Hello,\n\nYour order from "+ getTruckName()+" is ready for pickup!\n\n-Bull Run Market");
+
+        new SendGridAsync().execute(params);
+    }
+
+    //pulls the truck name from the app bar title to be used in the email
+    String getTruckName(){
+        return getSupportActionBar().getTitle().toString();
+    }
+
 }

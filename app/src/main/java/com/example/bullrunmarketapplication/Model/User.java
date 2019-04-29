@@ -1,7 +1,5 @@
 package com.example.bullrunmarketapplication.Model;
 
-import com.example.bullrunmarketapplication.Email;
-
 public class User {
 
     private String Username;

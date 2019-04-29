@@ -112,12 +112,12 @@
     <string name="closedOrders">Closed Orders</string>
     <string name="about_ats">Made by: Advanced Tech Society</string>
     <string name="truckSchedule">Truck Schedule</string>
-    <string name="Monday">Monday: Delight Italian Pizza</string>
-    <string name="Tuesday">Tuesday: Italian Pizza Tacos</string>
-    <string name="Wednesday">Wednesday: Pizza Tacos Delight</string>
-    <string name="Thursday">Thursday: Tacos Delight Italian</string>
-    <string name="Friday">Friday: Delight Italian Pizza Tacos</string>
-    <string name="Saturday">Saturday: Delight Italian Pizza Tacos</string>
+    <string name="Monday">Monday: Delight—Italian—Pizza</string>
+    <string name="Tuesday">Tuesday: Italian—Pizza—Tacos</string>
+    <string name="Wednesday">Wednesday: Pizza—Tacos—Delight</string>
+    <string name="Thursday">Thursday: Tacos—Delight—Italian</string>
+    <string name="Friday">Friday: Delight—Italian—Pizza—Tacos</string>
+    <string name="Saturday">Saturday: Delight—Italian—Pizza—Tacos</string>
     <string name="Sunday">Sunday: None</string>
     <string name="prompt_email">Email</string>
 

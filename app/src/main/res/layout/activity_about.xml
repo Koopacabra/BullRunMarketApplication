@@ -28,128 +28,132 @@
     android:layout_weight="7"
     android:layout_marginTop="1dp">
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/aboutUs"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintBottom_toTopOf="@+id/truckSchedule"
-        android:text="@string/about_ats"
-        android:layout_marginBottom="9dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"/>
+        <TextView
+            android:id="@+id/aboutUs"
+            style="?android:textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="28dp"
+            android:text="@string/about_ats"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/truckSchedule"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
-    <TextView
-        android:layout_height="41dp"
-        android:layout_width="match_parent"
-        android:id="@+id/truckSchedule"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintBottom_toTopOf="@+id/monday"
-        android:text="@string/truckSchedule"
-        android:layout_marginBottom="8dp"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        android:textColor="#0a0a0a"
-        android:gravity="center"
-        android:layout_alignParentStart="true"/>
+        <TextView
+            android:id="@+id/truckSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="@string/truckSchedule"
+            android:textColor="#0a0a0a"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aboutUs" />
 
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/monday"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/Monday"
-        android:layout_marginStart="8dp"
-        android:textSize="22sp"
-        android:textColor="#0a0a0a"
-        tools:layout_editor_absoluteY="122dp"/>
+        <TextView
+            android:id="@+id/monday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/Monday"
+            android:textColor="#0a0a0a"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/truckSchedule" />
 
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/tuesday"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/Tuesday"
-        android:layout_marginStart="8dp"
-        android:textSize="22sp"
-        android:textColor="#0a0a0a"
-        app:layout_constraintTop_toBottomOf="@+id/monday"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"/>
+        <TextView
+            android:id="@+id/tuesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/Tuesday"
+            android:textColor="#0a0a0a"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monday" />
 
 
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/wednesday"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/Wednesday"
-        android:layout_marginStart="8dp"
-        android:textSize="22sp"
-        android:textColor="#0a0a0a"
-        app:layout_constraintTop_toBottomOf="@+id/tuesday"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/wednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/Wednesday"
+            android:textColor="#0a0a0a"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tuesday" />
 
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/thursday"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="1dp"
-        android:text="@string/Thursday"
-        android:layout_marginStart="8dp"
-        android:textSize="22sp"
-        android:textColor="#0a0a0a"
-        android:layout_alignParentStart="true"
-        app:layout_constraintTop_toBottomOf="@+id/wednesday"
-        android:layout_alignParentBottom="true"/>
+        <TextView
+            android:id="@+id/thursday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/Thursday"
+            android:textColor="#0a0a0a"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wednesday" />
 
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/friday"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/Friday"
-        android:layout_marginStart="8dp"
-        android:textSize="22sp"
-        android:textColor="#0a0a0a"
-        app:layout_constraintTop_toBottomOf="@+id/thursday"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/friday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/Friday"
+            android:textColor="#0a0a0a"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thursday" />
 
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/saturday"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/Saturday"
-        android:layout_marginStart="8dp"
-        android:textSize="22sp"
-        android:textColor="#0a0a0a"
-        app:layout_constraintTop_toBottomOf="@+id/friday"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/saturday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/Saturday"
+            android:textColor="#0a0a0a"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/friday" />
 
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/sunday"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/Sunday"
-        android:layout_marginStart="8dp"
-        android:textSize="22sp"
-        android:textColor="#0a0a0a"
-        app:layout_constraintTop_toBottomOf="@+id/saturday"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"/>
+        <TextView
+            android:id="@+id/sunday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/Sunday"
+            android:textColor="#0a0a0a"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/saturday" />
 
     <android.support.v7.widget.AppCompatButton
         android:background="@color/colorPrimaryDark"

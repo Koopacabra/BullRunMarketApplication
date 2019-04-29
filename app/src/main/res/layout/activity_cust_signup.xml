@@ -95,14 +95,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_register"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/colorAccent"/>
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="?android:textAppearanceMedium"
                 android:text="@string/customerQ"
                 android:layout_marginTop="20dp"
+                android:textStyle="bold"
                 android:gravity="center"/>
 
             <Button
@@ -110,9 +114,11 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:text="@string/action_sign_in"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/colorAccent"/>
 
         </LinearLayout>
     </ScrollView>

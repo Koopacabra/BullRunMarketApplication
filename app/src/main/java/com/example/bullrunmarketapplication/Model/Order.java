@@ -14,6 +14,7 @@ public class Order {
     public List<Item> items;
     public String token;
     public String customer;
+    public String email;
     public boolean isClosed = false;
     public double refunded = 0;
 
@@ -22,10 +23,11 @@ public class Order {
     }
 
     // builds the object based off Item.java
-    public Order(List<Item> items, String token, String customer) {
+    public Order(List<Item> items, String token, String customer,String email) {
         this.items = items;
         this.token = token;
         this.customer = customer;
+        this.email = email;
     }
 
     //includes the item names in string format

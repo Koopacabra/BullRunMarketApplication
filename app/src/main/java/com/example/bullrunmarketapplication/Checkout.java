@@ -161,7 +161,7 @@ public class Checkout extends AppCompatActivity implements View.OnClickListener,
         * uses the timestamp the order was placed as the orderID rather than random generation;
         * includes the truckID so that the order goes to the correct truck;
         * this saved structure matches the Firebase structure*/
-        Order order = new Order(items, token, CustLogin.getUsername(this));
+        Order order = new Order(items, token,CustLogin.getUsername(this), CustLogin.getUserEmail(this));
         FirebaseDatabase database = FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
         database.getReference("orders")
                 .child(truckId + "")

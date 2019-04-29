@@ -18,6 +18,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
 public class CustLogin extends AppCompatActivity {
 
@@ -82,7 +83,7 @@ public class CustLogin extends AppCompatActivity {
                     Toast.makeText(CustLogin.this, "Login success!", Toast.LENGTH_SHORT).show();
 
                     //saving the username on successful login to be used within the order
-                    saveUsername(user.getUsername());
+                    saveUsername(user);
 
                     //navigating to TruckSelection
                     Intent intent = new Intent(getApplicationContext(), TruckSelection.class);
@@ -102,12 +103,22 @@ public class CustLogin extends AppCompatActivity {
     }
 
     //functions to save the username on success and enter it as a Firebase key
-    void saveUsername(String username){
-        getPref(this).edit().putString("username",username).apply();
-    }
+    void saveUsername(User user){
+        getPref(this).edit().putString("username",new Gson().toJson(user)).apply(); }
 
     public static String getUsername(Context context){
-        return  getPref(context).getString("username",null);
+        return  getUser(context).getUsername();
+    }
+
+    //also saving the username's email as an object for sending the email notification
+    public static String getUserEmail(Context context){
+        return  getUser(context).getEmail();
+    }
+
+    //Gson allows java objects to be translated to Json and vice versa; needed when pulling usernames & email from Firebase
+    public static User getUser(Context context){
+        Gson gson = new Gson();
+        return  gson.fromJson(getPref(context).getString("username",new Gson().toJson(new User())),User.class);
     }
 
     public static SharedPreferences getPref(Context context){
