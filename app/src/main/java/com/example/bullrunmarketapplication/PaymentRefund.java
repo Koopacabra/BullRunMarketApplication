@@ -104,7 +104,10 @@ public class PaymentRefund extends Activity implements View.OnClickListener {
             //saves the refunded amount to Firebase & toasts error if something goes wrong
             final FirebaseDatabase database =  FirebaseDatabase.getInstance(FIREBASE_DOMAIN_URL);
             database.getReference("orders")
-                    .child(TruckOrdersClosed.truckId + "").child(TruckOrdersClosed.selectedOrder.id).setValue(TruckOrdersClosed.selectedOrder).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    .child(TruckOrdersClosed.truckId + "")
+                    .child(TruckOrdersClosed.selectedOrder.id)
+                    .setValue(TruckOrdersClosed.selectedOrder)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Toast.makeText(PaymentRefund.this, "Refund issued.", Toast.LENGTH_SHORT).show();

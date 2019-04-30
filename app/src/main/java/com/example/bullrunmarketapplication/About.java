@@ -5,10 +5,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+/*import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;*/
 
 public class About extends AppCompatActivity {
 
@@ -27,15 +27,18 @@ public class About extends AppCompatActivity {
     }
 
 
-    //function to create the options/overflow menu for the app bar
+    /*commented out app bar menu/icons from About so that trucks don't get a checkout icon and
+     *customers don't get an order switching icon (we use the same About for customers and trucks)*/
+
+    /*//function to create the options/overflow menu for the app bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_options_button, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
-    /*function to determine what happens when an item is selected
-    from the options menu*/
+    *//*function to determine what happens when an item is selected
+    from the options menu*//*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -67,5 +70,5 @@ public class About extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }
